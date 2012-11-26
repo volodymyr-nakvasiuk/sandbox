@@ -20,7 +20,27 @@ sonata_admin:
 
     dashboard:
         blocks:
-            - { position: left, type: sonata.admin.block.admin_list }
-#            - { position: right, type: sonata.admin_doctrine_orm.block.audit}
+            - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
             - { position: right, type: sonata.block.service.text, settings: { content: "<h2>Welcome to the Sonata Admin</h2> <p>This is a <code>sonata.block.service.text</code> from the Block Bundle, you can create and add new block in these area by configuring the <code>sonata_admin</code> section.<br /> <br /> For instance, here a RSS feed parser (<code>sonata.block.service.rss</code>):</p>"} }
             - { position: right, type: sonata.block.service.rss, settings: { title: Sonata Project's Feeds, url: http://sonata-project.org/blog/archive.rss }}
+
+sonata_doctrine_phpcr_admin:
+    document_tree:
+        Doctrine\PHPCR\Odm\Document\Generic:
+            valid_children:
+                - all
+#        Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
+        Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route:
+            valid_children:
+                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
+                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
+        Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:
+            valid_children: []
+        Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuItem
+        Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuItem:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuItem

@@ -10,8 +10,6 @@
     "minimum-stability": "dev",
 
     "require": {
-        "doctrine/orm": ">=2.2.3,<2.4-dev",
-        "doctrine/doctrine-bundle": "1.0.*",
         "twig/extensions": "1.0.*",
 
         "symfony/symfony": "2.1.*",
@@ -26,12 +24,16 @@
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
 
-        "doctrine/doctrine-migrations-bundle": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
 
         "liip/imagine-bundle": "dev-master",
 
-        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "symfony-cmf/symfony-cmf": "1.0.*",
+        "jackalope/jackalope-doctrine-dbal": "dev-master",
+        "doctrine/phpcr-bundle": "1.0.*",
+        "doctrine/phpcr-odm": "1.0.*",
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
+
         "sonata-project/page-bundle": "dev-master",
         "sonata-project/news-bundle": "dev-master",
         "sonata-project/media-bundle": "dev-master",

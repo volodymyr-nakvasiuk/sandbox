@@ -1,0 +1,24 @@
+fos_js_routing:
+    routes_to_expose:
+        - admin_sandbox_main_editablestaticcontent_create
+        - admin_sandbox_main_editablestaticcontent_delete
+        - admin_sandbox_main_editablestaticcontent_edit
+        - admin_bundle_menu_menuitem_create
+        - admin_bundle_menu_menuitem_delete
+        - admin_bundle_menu_menuitem_edit
+        - admin_bundle_menu_multilangmenuitem_create
+        - admin_bundle_menu_multilangmenuitem_delete
+        - admin_bundle_menu_multilangmenuitem_edit
+        - admin_bundle_content_multilangstaticcontent_create
+        - admin_bundle_content_multilangstaticcontent_delete
+        - admin_bundle_content_multilangstaticcontent_edit
+        - admin_bundle_routingextra_route_create
+        - admin_bundle_routingextra_route_delete
+        - admin_bundle_routingextra_route_edit
+        - admin_bundle_simplecms_page_create
+        - admin_bundle_simplecms_page_delete
+        - admin_bundle_simplecms_page_edit
+        - symfony_cmf_tree_browser.phpcr_children
+        - symfony_cmf_tree_browser.phpcr_move
+        - sonata.admin.doctrine_phpcr.phpcrodm_children
+        - sonata.admin.doctrine_phpcr.phpcrodm_move
