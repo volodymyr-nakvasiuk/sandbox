@@ -2,7 +2,7 @@
 # more information can be found here http://sonata-project.org/bundles/media
 #
 sonata_media:
-    db_driver:       doctrine_orm # | doctrine_mongodb
+    db_driver:       doctrine_phpcr # doctrine_orm | doctrine_mongodb | doctrine_phpcr
     default_context: default
     contexts:
         default:  # the default context is mandatory
@@ -72,10 +72,10 @@ sonata_media:
 #                thumbnail: { size: [500, 70], mode: outbound }
 
 # Enable Doctrine to map the provided entities
-doctrine:
-    orm:
-        entity_managers:
-            default:
-                mappings:
-                    ApplicationSonataMediaBundle: ~
-                    SonataMediaBundle: ~
+#doctrine:
+#    orm:
+#        entity_managers:
+#            default:
+#                mappings:
+#                    ApplicationSonataMediaBundle: ~
+#                    SonataMediaBundle: ~

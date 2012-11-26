@@ -54,7 +54,7 @@ class AppKernel extends Kernel
 //            new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
 
             // MEDIA
-//            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Sonata\MediaBundle\SonataMediaBundle(),
 //            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             // new Liip\ImagineBundle\LiipImagineBundle(),
 
