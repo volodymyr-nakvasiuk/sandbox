@@ -15,9 +15,11 @@ monolog:
             type:  stream
             path:  %kernel.logs_dir%/%kernel.environment%.log
             level: debug
-        firephp:
-            type:  firephp
-            level: info
+        # The firephp handler is commented has the generated headers can break the max limit size defined
+        # defined by the cgi process (php-fpm or php-cgi)
+        #firephp:
+        #    type:  firephp
+        #    level: info
 
 assetic:
     use_controller: true
