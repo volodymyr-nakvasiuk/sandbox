@@ -2665,35 +2665,32 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataNotificationBundle.git",
-                "reference": "5e26c7715ba533bd98a5121c83c6c82f08446eda"
+                "reference": "2.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataNotificationBundle/zipball/5e26c7715ba533bd98a5121c83c6c82f08446eda",
-                "reference": "5e26c7715ba533bd98a5121c83c6c82f08446eda",
+                "url": "https://api.github.com/repos/sonata-project/SonataNotificationBundle/zipball/2.2.0",
+                "reference": "2.2.0",
                 "shasum": ""
             },
             "require": {
-                "sonata-project/admin-bundle": "2.2.*@dev",
-                "sonata-project/block-bundle": "2.*",
                 "sonata-project/doctrine-extensions": "1.*",
-                "sonata-project/doctrine-orm-admin-bundle": "2.2.*@dev",
                 "symfony/symfony": ">=2.1,<2.4-dev"
             },
             "require-dev": {
                 "liip/monitor-bundle": "0.4.*",
+                "sonata-project/doctrine-orm-admin-bundle": "2.2.*",
                 "videlalvaro/php-amqplib": "2.0.*"
             },
             "suggest": {
                 "guzzle/guzzle": "3.*",
                 "liip/monitor-bundle": "0.4.*",
+                "sonata-project/doctrine-orm-admin-bundle": "2.2.*",
                 "videlalvaro/php-amqplib": "2.0.*"
             },
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-2.0": "2.0.x-dev",
-                    "dev-2.1": "2.1.x-dev",
                     "dev-master": "2.2.x-dev"
                 }
             },
@@ -2724,7 +2721,7 @@
                 "page",
                 "sonata"
             ],
-            "time": "2013-05-19 09:58:35"
+            "time": "2013-06-01 13:34:36"
         },
         {
             "name": "sonata-project/page-bundle",
