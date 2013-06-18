@@ -9,33 +9,22 @@ set :scm,         :git
 set :model_manager, "doctrine"
 # Or: `propel`
 
-set  :keep_releases,  3
+set :keep_releases, 3
+set :use_sudo,      false
 
 # Be more verbose by uncommenting the following line
 # logger.level = Logger::MAX_LEVEL
 
 ## Nice options to add
-# set :composer_options,        "--prefer-source"
-# ssh_options[:forward_agent] = true
+set :use_composer,            true
+set :composer_options,        "--verbose --optimize-autoloader --prefer-source"
+ssh_options[:forward_agent] = true
 
-# set :shared_files,            ["app/config/parameters.yml"]
+set :shared_files,            ["app/config/parameters.yml"]
 # set :shared_children,         [app_path + "/logs", web_path + "/uploads", "data"]
 # set :clear_controllers,       false
 # set :assets_symlinks,         true
-
-
-# http://capifony.org/cookbook/speeding-up-deploy.html
-# before 'symfony:composer:install', 'composer:copy_vendors'
-# before 'symfony:composer:update', 'composer:copy_vendors'
-#
-# namespace :composer do
-#   task :copy_vendors, :except => { :no_release => true } do
-#     capifony_pretty_print "--> Copy vendor file from previous release"
-#
-#     run "vendorDir=#{current_path}/vendor; if [ -d $vendorDir ] || [ -h $vendorDir ]; then cp -a $vendorDir #{latest_release}/vendor; fi;"
-#     capifony_puts_ok
-#   end
-# end
+set :copy_vendors,            true
 
 # # configure production settings
 # task :production do
@@ -66,3 +55,17 @@ set  :keep_releases,  3
 #
 #     set :sonata_page_managers, ['page', 'snapshot']
 # end
+
+after "deploy:setup" do
+    run "if [ ! -d #{deploy_to}/shared/app/config ]; then mkdir -p #{deploy_to}/shared/app/config; fi"
+
+    upload(
+        '%s/%s_parameters.yml' % [File.dirname(__FILE__), fetch(:stage)],
+        '%s/shared/app/config/parameters.yml' % fetch(:deploy_to)
+    )
+end
+
+after "deploy" do
+    run "sudo chmod -R 777 #{latest_release}/app/cache"
+    run "sudo chmod -R 777 #{latest_release}/app/logs"
+end
