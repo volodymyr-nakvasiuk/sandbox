@@ -22,7 +22,7 @@ Installation
 
 Run the following commands::
 
-    git clone http://github.com/sonata-project/sandbox.git sonata-sandbox
+    git clone http://github.com/sonata-project/sandbox.git sonata-sandbox -b 2.2
     cd sonata-sandbox
     rm -rf .git
     git init
