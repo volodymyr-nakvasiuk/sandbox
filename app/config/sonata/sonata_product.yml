@@ -1,17 +1,4 @@
 sonata_product:
-    products:
-        # Goodies
-        sonata.ecommerce_demo.product.goodie:
-            provider: sonata.ecommerce_demo.product.goodie.type
-            manager:  sonata.ecommerce_demo.product.goodie.manager
-
-        # Travel
-        sonata.ecommerce_demo.product.travel:
-            provider: sonata.ecommerce_demo.product.travel.type
-            manager: sonata.ecommerce_demo.product.travel.manager
-            variations:
-                fields: [travellers, travelDays, sku, slug, name, price, stock, vatRate, priceIncludingVat, enabled]
-
     seo:
         product:
             site: '@sonataproject'

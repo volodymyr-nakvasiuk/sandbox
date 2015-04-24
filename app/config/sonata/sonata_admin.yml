@@ -97,15 +97,6 @@ sonata_admin:
                     - sonata.page.admin.site
                     - sonata.notification.admin.message
 
-            sonata.admin.group.demo:
-                label: Demo
-                icon:  '<i class="fa fa-play-circle"></i>'
-                items:
-                    - sonata.demo.admin.car
-                    - sonata.demo.admin.engine
-                    - sonata.demo.admin.color
-                    - sonata.demo.admin.material
-
     assets:
         stylesheets:
             # The sandbox includes default pre-optimized version of some css and js
