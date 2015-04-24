@@ -52,7 +52,7 @@ class Order
      *
      * @ORM\Column(name="join_book_buy", type="boolean", nullable=false)
      */
-    private $joinBookBuy = '0';
+    private $joinBookBuy = false;
 
     /**
      * @var string
@@ -66,7 +66,7 @@ class Order
      *
      * @ORM\Column(name="date_create", type="datetime", nullable=false)
      */
-    private $dateCreate = 'CURRENT_TIMESTAMP';
+    private $dateCreate;
 
     /**
      * @var integer
