@@ -12,3 +12,6 @@
 /web/vendor
 /web/assetic/*[0-9]*
 /.idea
+/bin/doctrine-dbal
+/bin/doctrine-dbal.bat
+/composer.phar
