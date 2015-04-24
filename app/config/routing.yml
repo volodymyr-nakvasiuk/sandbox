@@ -1,6 +1,6 @@
 application_gillbus_etravels:
     resource: "@ApplicationGillbusEtravelsBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /etr
 
 # Internal routing configuration to handle ESI
 #_internal:
