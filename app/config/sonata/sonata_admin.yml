@@ -51,42 +51,25 @@ sonata_admin:
         groups:
             sonata.admin.group.content:
                 label:           sonata_content
-                label_catalogue: SonataDemoBundle
+                label_catalogue: SonataAdminBundle
                 icon:            '<i class="fa fa-th"></i>'
                 items:
-                    - sonata.news.admin.comment
-                    - sonata.news.admin.post
-                    - sonata.media.admin.media
-                    - sonata.media.admin.gallery
-                    - sonata.comment.admin.thread
+                     - application_gillbus_tickets.admin.blogpost
+                roles: [ ROLE_ONE, ROLE_TWO ]
 
             sonata.admin.group.ecommerce:
                 label:           sonata_ecommerce
                 label_catalogue: SonataAdminBundle
                 icon:            '<i class="fa fa-dollar"></i>'
                 items:
-                    - sonata.customer.admin.customer
-                    - sonata.invoice.admin.invoice
-                    - sonata.order.admin.order
-                    - sonata.product.admin.product
                     - application_gillbus_etravels.admin.order
 
-            sonata.admin.group.classification:
-                label:           sonata_classification
-                label_catalogue: SonataClassificationBundle
-                icon:            '<i class="fa fa-sitemap"></i>'
+            sonata.admin.group.dictionary:
+                label:           sonata_dictionary
+                label_catalogue: SonataAdminBundle
+                icon:            '<i class="fa fa-book"></i>'
                 items:
-                    - sonata.classification.admin.category
-                    - sonata.classification.admin.tag
-                    - sonata.classification.admin.collection
-
-            sonata.admin.group.site_builder:
-                label:           Site Builder
-                label_catalogue: SonataDemoBundle
-                icon:            '<i class="fa fa-puzzle-piece"></i>'
-                items:
-                    - sonata.page.admin.page
-                    - sonata.page.admin.site
+                    - application_gillbus_etravels.admin.order
 
             sonata.admin.group.administration:
                 label:           sonata_administration
@@ -109,21 +92,21 @@ sonata_admin:
             - assetic/sonata_jqueryui_css.css
             - bundles/sonatademo/css/demo.css
 
-#            - bundles/sonataformatter/markitup/skins/sonata/style.css
-#            - bundles/sonataformatter/markitup/sets/markdown/style.css
-#            - bundles/sonataformatter/markitup/sets/html/style.css
-#            - bundles/sonataformatter/markitup/sets/textile/style.css
-#            - bundles/sonataadmin/vendor/bootstrap/dist/css/bootstrap.min.css
-#            - bundles/sonataadmin/vendor/AdminLTE/css/font-awesome.min.css
-#            - bundles/sonataadmin/vendor/AdminLTE/css/ionicons.min.css
-#            - bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE.css
-#            - bundles/sonataadmin/vendor/jqueryui/themes/flick/jquery-ui.min.css
-#            - bundles/sonataadmin/vendor/select2/select2.css
-#            - bundles/sonataadmin/vendor/select2/select2-bootstrap.css
-#            - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css
-#            - bundles/sonataadmin/css/styles.css
-#            - bundles/sonataadmin/css/layout.css
-#            - bundles/sonatapage/sonata-page.back.min.css
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
+            - bundles/sonataadmin/vendor/bootstrap/dist/css/bootstrap.min.css
+            - bundles/sonataadmin/vendor/AdminLTE/css/font-awesome.min.css
+            - bundles/sonataadmin/vendor/AdminLTE/css/ionicons.min.css
+            - bundles/sonataadmin/vendor/AdminLTE/css/AdminLTE.css
+            - bundles/sonataadmin/vendor/jqueryui/themes/flick/jquery-ui.min.css
+            - bundles/sonataadmin/vendor/select2/select2.css
+            - bundles/sonataadmin/vendor/select2/select2-bootstrap.css
+            - bundles/sonataadmin/vendor/x-editable/dist/bootstrap3-editable/css/bootstrap-editable.css
+            - bundles/sonataadmin/css/styles.css
+            - bundles/sonataadmin/css/layout.css
+            - bundles/sonatapage/sonata-page.back.min.css
 
         javascripts:
             - assetic/sonata_admin_js.js

@@ -1,0 +1,3 @@
+tickets_homepage:
+    path:     /dashboard
+    defaults: { _controller: TicketsBundle:BlogPost:index }

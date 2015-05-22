@@ -7,3 +7,5 @@ services:
         arguments: [~, Application\Gillbus\EtravelsBundle\Entity\Order, SonataAdminBundle:CRUD]
         tags:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Order}
+
+

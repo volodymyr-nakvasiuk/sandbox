@@ -1,0 +1,15 @@
+services:
+#    tickets.example:
+#        class: Application\Gillbus\TicketsBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    application_gillbus_tickets.admin.blogpost:
+        class : Application\Gillbus\TicketsBundle\Admin\BlogPostAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\BlogPost
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog}
+        calls:
+            - [ setTemplate, [edit, TicketsBundle:BlogPostAdmin:edit.html.twig]]

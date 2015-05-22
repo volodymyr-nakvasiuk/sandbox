@@ -4,7 +4,15 @@
         <body>
             <trans-unit id="sonata_ecommerce">
                 <source>sonata_ecommerce</source>
-                <target>E-Commerce</target>
+                <target>Analytics</target>
+            </trans-unit>
+            <trans-unit id="sonata_dictionary">
+                <source>sonata_dictionary</source>
+                <target>Dictionaries</target>
+            </trans-unit>
+            <trans-unit id="sonata_content">
+                <source>sonata_content</source>
+                <target>SEO pages</target>
             </trans-unit>
         </body>
     </file>
