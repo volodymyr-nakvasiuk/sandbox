@@ -8,6 +8,7 @@
 
 namespace Application\Gillbus\TicketsBundle\Admin;
 
+use Application\Gillbus\TicketsBundle\Entity\BlogPost;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -47,10 +48,10 @@ class BlogPostAdmin extends Admin
                 ->end()
             ->end()
             ->tab('General')
-                ->add('category_id', 'text', array('required' => true, 'label' => 'Category'))
+                ->add('categoryId','entity', array('class'=>'Application\Gillbus\TicketsBundle\Entity\BlogCategory', 'property'=>'nameEn', ))
                 ->add('imageUrl')
                 ->add('publishedAt', 'datetime', array('required' => true, 'label' => 'Publishing date'))
-                ->add('is_deleted', 'checkbox', array('required' => true, 'label' => 'Visible'))
+                ->add('isDeleted', 'checkbox', array('required' => true, 'label' => 'Visible'))
                 ->end()
             ->end()
         ;
@@ -61,7 +62,7 @@ class BlogPostAdmin extends Admin
     {
         $datagridMapper
             ->add('titlePageEn')
-            ->add('categoryId')
+            ->add('categoryId', null, array('label'=>'Category'))
             ->add('createdAt')
             ->add('publishedAt')
             ->add('isDeleted')

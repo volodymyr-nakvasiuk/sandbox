@@ -2,6 +2,7 @@
 
 namespace Application\Gillbus\TicketsBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class BlogPost
 {
+
+    public function __construct()
+    {
+        $this->categoryId = new ArrayCollection();
+    }
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -21,7 +28,8 @@ class BlogPost
 
     /**
      * @var integer
-     * @ORM\Column(name="category_id", type="integer", nullable=false)
+     * @ORM\OneToOne(targetEntity="BlogCategory")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $categoryId;
 

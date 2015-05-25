@@ -1,3 +1,6 @@
 tickets_homepage:
     path:     /dashboard
     defaults: { _controller: TicketsBundle:BlogPost:index }
+tickets_blogcategory:
+    path:     /blogcategories
+    defaults: { _controller: TicketsBundle:BlogCategory:index }

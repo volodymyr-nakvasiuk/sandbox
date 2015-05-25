@@ -10,6 +10,17 @@ services:
             - Application\Gillbus\TicketsBundle\Entity\BlogPost
             - SonataAdminBundle:CRUD
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog}
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog Posts}
         calls:
-            - [ setTemplate, [edit, TicketsBundle:BlogPostAdmin:edit.html.twig]]
+            - [ setTemplate, [edit, TicketsBundle:BlogAdmin:Post/edit.html.twig]]
+
+    application_gillbus_tickets.admin.blogcategory:
+        class: Application\Gillbus\TicketsBundle\Admin\BlogCategoryAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\BlogCategory
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog Category}
+        calls:
+            - [ setTemplate, [edit, TicketsBundle:BlogAdmin:Category/edit.html.twig]]
