@@ -24,3 +24,36 @@ services:
             - {name: sonata.admin, manager_type: orm, group: admin, label: Blog Category}
         calls:
             - [ setTemplate, [edit, TicketsBundle:BlogAdmin:Category/edit.html.twig]]
+
+    application_gillbus_tickets.admin.place:
+        class: Application\Gillbus\TicketsBundle\Admin\PlaceAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\Place
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Places}
+        calls:
+            - [ setTemplate, [edit, TicketsBundle:PlaceAdmin:edit.html.twig]]
+
+    application_gillbus_tickets.admin.route:
+        class: Application\Gillbus\TicketsBundle\Admin\RouteAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\Route
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Routes}
+        calls:
+            - [ setTemplate, [edit, TicketsBundle:RouteAdmin:edit.html.twig]]
+
+    application_gillbus_tickets.admin.promocode:
+        class: Application\Gillbus\TicketsBundle\Admin\PromoCodeAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\PromoCode
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Promo Codes}
+        calls:
+            - [ setTemplate, [edit, TicketsBundle:PromoCodeAdmin:edit.html.twig]]

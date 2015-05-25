@@ -31,7 +31,7 @@ class BlogCategoryAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General')
+            ->with('General', array('tab'=>'true'))
                 ->add('parentId')
                 ->add('nameEn')
                 ->add('nameTh')

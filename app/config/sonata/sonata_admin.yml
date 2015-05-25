@@ -56,6 +56,8 @@ sonata_admin:
                 items:
                      - application_gillbus_tickets.admin.blogcategory
                      - application_gillbus_tickets.admin.blogpost
+                     - application_gillbus_tickets.admin.route
+                     - application_gillbus_tickets.admin.promocode
                 roles: [ ROLE_ONE, ROLE_TWO ]
 
             sonata.admin.group.ecommerce:
@@ -70,7 +72,7 @@ sonata_admin:
                 label_catalogue: SonataAdminBundle
                 icon:            '<i class="fa fa-book"></i>'
                 items:
-#                    - application_gillbus_etravels.admin.order
+                     - application_gillbus_tickets.admin.place
 
             sonata.admin.group.administration:
                 label:           sonata_administration

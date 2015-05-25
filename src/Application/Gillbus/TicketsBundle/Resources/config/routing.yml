@@ -1,6 +1,19 @@
 tickets_homepage:
     path:     /dashboard
     defaults: { _controller: TicketsBundle:BlogPost:index }
+
 tickets_blogcategory:
     path:     /blogcategories
     defaults: { _controller: TicketsBundle:BlogCategory:index }
+
+tickets_place:
+    path:     /place
+    defaults: { _controller: TicketsBundle:Place:index }
+
+tickets_place:
+    path:     /route
+    defaults: { _controller: TicketsBundle:Route:index }
+
+tickets_place:
+    path:     /promocode
+    defaults: { _controller: TicketsBundle:PromoCode:index }
