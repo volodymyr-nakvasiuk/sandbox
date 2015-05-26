@@ -20,9 +20,17 @@ class RouteAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('titleEn')
+            ->add('titleEn')
             ->add('url')
             ->add('isDeleted')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
+                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
+                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
+                ),
+                'template' => 'TicketsBundle:Default:list__action.html.twig'
+            ))
         ;
     }
 
@@ -32,7 +40,7 @@ class RouteAdmin extends Admin
             ->with('English', array('tab' => true))
                 ->add('titleEn')
                 ->add('titlePageEn')
-                ->add('contentEn')
+                ->add('contentEn', 'textarea', array('attr' => array('class' => 'ckeditor')))
                 ->add('descriptionEn')
                 ->add('keywordsEn')
             ->end()
@@ -40,7 +48,7 @@ class RouteAdmin extends Admin
             ->tab('Thai')
                 ->add('titleTh')
                 ->add('titlePageTh')
-                ->add('contentTh')
+                ->add('contentTh', 'textarea', array('attr' => array('class' => 'ckeditor')))
                 ->add('descriptionTh')
                 ->add('keywordsTh')
             ->end()
@@ -48,15 +56,15 @@ class RouteAdmin extends Admin
             ->tab('Russian')
                 ->add('titleRu')
                 ->add('titlePageRu')
-                ->add('contentRu')
+                ->add('contentRu', 'textarea', array('attr' => array('class' => 'ckeditor')))
                 ->add('descriptionRu')
                 ->add('keywordsRu')
             ->end()
             ->end()
             ->tab('General')
                 ->add('url')
-                ->add('departPlaceId')
-                ->add('arrivePlaceId')
+                ->add('departPlaceId', null, array('label' => 'Depart place'))
+                ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
                 ->add('isDeleted')
             ->end()
             ->end()

@@ -19,24 +19,30 @@ class BlogCategoryAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('id')
-            ->addIdentifier('nameEn')
-            ->addIdentifier('nameTh')
-            ->addIdentifier('nameRu')
-            ->add('sortId')
+            ->add('nameEn')
+            ->add('nameTh')
+            ->add('nameRu')
+            ->add('sortId', null, array('label' => 'Priority'))
             ->add('isDeleted')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
+                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
+                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
+                ),
+                'template' => 'TicketsBundle:Default:list__action.html.twig'
+            ))
         ;
     }
 
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('General', array('tab'=>'true'))
-                ->add('parentId')
+            ->with('General')
                 ->add('nameEn')
                 ->add('nameTh')
                 ->add('nameRu')
-                ->add('sortId')
+                ->add('sortId', 'integer', array('label' => 'Priority'))
                 ->add('isDeleted')
             ->end()
         ;
@@ -45,8 +51,9 @@ class BlogCategoryAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('id')
-            ->add('parentId')
+            ->add('nameEn')
+            ->add('nameTh')
+            ->add('nameRu')
             ->add('isDeleted')
         ;
     }

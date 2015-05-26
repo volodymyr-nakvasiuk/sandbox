@@ -58,6 +58,7 @@ sonata_admin:
                      - application_gillbus_tickets.admin.blogpost
                      - application_gillbus_tickets.admin.route
                      - application_gillbus_tickets.admin.promocode
+                     - application_gillbus_tickets.admin.populartrip
                 roles: [ ROLE_ONE, ROLE_TWO ]
 
             sonata.admin.group.ecommerce:

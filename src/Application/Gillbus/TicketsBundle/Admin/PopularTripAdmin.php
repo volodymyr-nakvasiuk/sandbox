@@ -2,27 +2,30 @@
 /**
  * Created by PhpStorm.
  * User: donnie
- * Date: 25.05.15
- * Time: 16:51
+ * Date: 26.05.15
+ * Time: 10:07
  */
 
 namespace Application\Gillbus\TicketsBundle\Admin;
+
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 
-class PromoCodeAdmin extends Admin
+class PopularTripAdmin extends Admin
 {
+
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('code')
+            ->add('sortId')
             ->add('departPlaceId', null, array('label' => 'Depart place'))
-            ->add('arrivePlaceId', null, array('label' => 'Depart place'))
+            ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
             ->add('beginDate')
             ->add('endDate')
+            ->add('isDeleted')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
@@ -33,39 +36,31 @@ class PromoCodeAdmin extends Admin
             ));
     }
 
-    protected function configureFormFields(FormMapper $formMapper)
-    {
-        $formMapper
-            ->with('Promo Code')
-                ->add('code')
-            ->end()
-            ->with('Places')
-                ->add('departPlaceId')
-                ->add('arrivePlaceId')
-            ->end()
-            ->with('Dates')
-                ->add('beginDate', 'datetime')
-                ->add('endDate', 'datetime')
-            ->end()
-            ->with('Discount')
-                ->add('value')
-                ->add('discountValue')
-                ->add('discountPercent')
-            ->end()
-            ->with('Success message')
-                ->add('successEn')
-                ->add('successTh')
-                ->add('successRu')
-            ->end();
-    }
-
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('code')
+            ->add('sortId')
+            ->add('beginDate')
+            ->add('endDate')
             ->add('departPlaceId', null, array('label' => 'Depart place'))
             ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
-            ->add('beginDate')
-            ->add('endDate');
+            ->add('isDeleted');
     }
+
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('Places')
+                ->add('departPlaceId', null, array('label' => 'Depart place'))
+                ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
+            ->end()
+            ->with('Dates')
+                ->add('beginDate')
+                ->add('endDate')
+            ->end()
+            ->add('imageUrl')
+            ->add('sortId')
+            ->add('isDeleted');
+    }
+
 }
