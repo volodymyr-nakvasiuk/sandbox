@@ -1,5 +1,5 @@
-tickets:
-    resource: "@TicketsBundle/Resources/config/routing.yml"
+application_gillbus_etravels:
+    resource: "@ApplicationGillbusEtravelsBundle/Resources/config/routing.yml"
     prefix:   /
 
 application_gillbus_tickets:

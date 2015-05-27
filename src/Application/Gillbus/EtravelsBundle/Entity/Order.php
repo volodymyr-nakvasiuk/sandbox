@@ -24,7 +24,14 @@ class Order
      *
      * @ORM\Column(name="order_number", type="string", length=20, nullable=false)
      */
-    private $orderNumber;
+    public $orderNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="amount", type="string")
+     */
+    public $orderAmount;
 
     /**
      * @var boolean
@@ -69,6 +76,13 @@ class Order
     private $dateCreate;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="date_end_reservation", type="string", nullable=false)
+     */
+    private $dateEndReservation;
+
+    /**
      * @var integer
      *
      * @ORM\Column(name="id", type="integer")
@@ -95,7 +109,7 @@ class Order
      *   @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      * })
      */
-    private $client;
+    public $client;
 
 
 
@@ -145,6 +159,15 @@ class Order
     public function getOrderNumber()
     {
         return $this->orderNumber;
+    }
+    /**
+     * Get orderAmount
+     *
+     * @return string
+     */
+    public function getOrderAmount()
+    {
+        return $this->orderAmount;
     }
 
     /**
@@ -292,6 +315,16 @@ class Order
     }
 
     /**
+     * Get dateEndReservation
+     *
+     * @return string
+     */
+    public function getDateEndReservation()
+    {
+        return date('d.m.Y H:i', strtotime($this->dateEndReservation));
+    }
+
+    /**
      * Get id
      *
      * @return integer
@@ -348,4 +381,10 @@ class Order
     {
         return $this->client;
     }
+
+    public function __toString()
+    {
+        return $this->getDateEndReservation();
+    }
+
 }

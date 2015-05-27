@@ -2,10 +2,10 @@ services:
 #    application_gillbus_etravels.example:
 #        class: Application\Gillbus\EtravelsBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
-    application_gillbus_etravels.admin.order:
-        class: Application\Gillbus\EtravelsBundle\Admin\OrderAdmin
-        arguments: [~, Application\Gillbus\EtravelsBundle\Entity\Order, SonataAdminBundle:CRUD]
-        tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Order}
 
+    application_gillbus_etravels.admin.novaPoshta:
+        class: Application\Gillbus\EtravelsBundle\Admin\NovaPoshtaAdmin
+        arguments: [~, Application\Gillbus\EtravelsBundle\Entity\NovaPoshta, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: NovaPoshta}
 

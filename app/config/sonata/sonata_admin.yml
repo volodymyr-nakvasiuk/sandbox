@@ -49,37 +49,14 @@ sonata_admin:
             - { position: right, type: sonata.block.service.rss, settings: { title: Sonata Project's Feeds, url: http://sonata-project.org/blog/archive.rss, template: SonataAdminBundle:Block:block_rss_dashboard.html.twig }}
 
         groups:
-            sonata.admin.group.content:
-                label:           sonata_content
-                label_catalogue: SonataAdminBundle
-                icon:            '<i class="fa fa-th"></i>'
-                items:
-                     - application_gillbus_tickets.admin.blogpost
-                roles: [ ROLE_ONE, ROLE_TWO ]
 
             sonata.admin.group.ecommerce:
                 label:           sonata_ecommerce
                 label_catalogue: SonataAdminBundle
                 icon:            '<i class="fa fa-dollar"></i>'
                 items:
-                    - application_gillbus_etravels.admin.order
+                    - application_gillbus_etravels.admin.novaposhta
 
-            sonata.admin.group.dictionary:
-                label:           sonata_dictionary
-                label_catalogue: SonataAdminBundle
-                icon:            '<i class="fa fa-book"></i>'
-                items:
-                    - application_gillbus_etravels.admin.order
-
-            sonata.admin.group.administration:
-                label:           sonata_administration
-                label_catalogue: SonataAdminBundle
-                icon:            '<i class="fa fa-cogs"></i>'
-                items:
-                    - sonata.user.admin.user
-                    - sonata.user.admin.group
-                    - sonata.page.admin.site
-                    - sonata.notification.admin.message
 
     assets:
         stylesheets:
