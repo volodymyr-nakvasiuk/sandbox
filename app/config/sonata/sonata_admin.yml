@@ -94,7 +94,7 @@ sonata_admin:
             - assetic/sonata_admin_css.css
             - assetic/sonata_formatter_css.css
             - assetic/sonata_jqueryui_css.css
-            - bundles/sonatademo/css/demo.css
+#            - bundles/sonatademo/css/demo.css
 
             - bundles/sonataformatter/markitup/skins/sonata/style.css
             - bundles/sonataformatter/markitup/sets/markdown/style.css
@@ -131,7 +131,7 @@ sonata_admin:
 #            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.accordion.js
 #            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.autocomplete.js
 #            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.button.js
-#            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.datepicker.js
+            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.datepicker.js
 #            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.dialog.js
 #            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.effect-blind.js
 #            - bundles/sonataadmin/vendor/jqueryui/ui/jquery.ui.effect-bounce.js

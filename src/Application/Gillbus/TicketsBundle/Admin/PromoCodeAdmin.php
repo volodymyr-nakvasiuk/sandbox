@@ -20,9 +20,9 @@ class PromoCodeAdmin extends Admin
         $listMapper
             ->add('code')
             ->add('departPlaceId', null, array('label' => 'Depart place'))
-            ->add('arrivePlaceId', null, array('label' => 'Depart place'))
-            ->add('beginDate')
-            ->add('endDate')
+            ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
+            ->add('beginDate', 'date', array('template' => 'TicketsBundle:Default:list_date.html.twig'))
+            ->add('endDate', 'date', array('template' => 'TicketsBundle:Default:list_date.html.twig'))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
@@ -44,8 +44,8 @@ class PromoCodeAdmin extends Admin
                 ->add('arrivePlaceId')
             ->end()
             ->with('Dates')
-                ->add('beginDate', 'datetime')
-                ->add('endDate', 'datetime')
+                ->add('beginDate', 'sonata_type_date_picker', array('format' => 'dd.MM.y'))
+                ->add('endDate', 'sonata_type_date_picker', array('format' => 'dd.MM.y'))
             ->end()
             ->with('Discount')
                 ->add('value')
@@ -65,7 +65,7 @@ class PromoCodeAdmin extends Admin
             ->add('code')
             ->add('departPlaceId', null, array('label' => 'Depart place'))
             ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
-            ->add('beginDate')
-            ->add('endDate');
+            ->add('beginDate', 'doctrine_orm_date_range', array('field_type'=>'sonata_type_date_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
+            ->add('endDate', 'doctrine_orm_date_range', array('field_type'=>'sonata_type_date_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'));
     }
 }

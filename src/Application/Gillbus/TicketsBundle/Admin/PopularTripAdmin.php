@@ -40,8 +40,8 @@ class PopularTripAdmin extends Admin
     {
         $datagridMapper
             ->add('sortId')
-            ->add('beginDate')
-            ->add('endDate')
+            ->add('beginDate', 'doctrine_orm_date_range', array('field_type'=>'sonata_type_date_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
+            ->add('endDate', 'doctrine_orm_date_range', array('field_type'=>'sonata_type_date_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
             ->add('departPlaceId', null, array('label' => 'Depart place'))
             ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
             ->add('isDeleted');
@@ -55,8 +55,8 @@ class PopularTripAdmin extends Admin
                 ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
             ->end()
             ->with('Dates')
-                ->add('beginDate')
-                ->add('endDate')
+                ->add('beginDate', 'sonata_type_date_picker', array('format' => 'dd.MM.y'))
+                ->add('endDate', 'sonata_type_date_picker', array('format' => 'dd.MM.y'))
             ->end()
             ->add('imageUrl')
             ->add('sortId')

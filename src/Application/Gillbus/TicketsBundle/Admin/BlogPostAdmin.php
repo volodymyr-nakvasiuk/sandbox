@@ -20,7 +20,7 @@ class BlogPostAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->with('English', array('tab' => true))
+            ->tab('English')
                 ->add('titleEn', 'text', array('required' => true, 'label' => 'Title'))
                 ->add('titlePageEn', null, array('label'=>'Page title', 'required' => false))
                 ->add('shortContentEn', 'textarea', array('label'=>'Short content', 'required' => false, 'attr' => array('class' => 'ckeditor')))
@@ -50,7 +50,7 @@ class BlogPostAdmin extends Admin
             ->tab('General')
                 ->add('categoryId','entity', array('label' => 'Category', 'class'=>'Application\Gillbus\TicketsBundle\Entity\BlogCategory', 'property'=>'nameEn', ))
                 ->add('imageUrl')
-                ->add('publishedAt', 'datetime', array('required' => true, 'label' => 'Publishing date'))
+                ->add('publishedAt', 'sonata_type_datetime_picker', array('required' => true, 'label' => 'Publishing date', 'format' => 'dd.MM.y HH:mm:sss'))
                 ->add('isDeleted', 'checkbox', array('required' => true))
                 ->end()
             ->end()
@@ -63,7 +63,7 @@ class BlogPostAdmin extends Admin
         $datagridMapper
             ->add('titlePageEn')
             ->add('categoryId', null, array('label'=>'Category'))
-            ->add('publishedAt')
+            ->add('publishedAt', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
             ->add('isDeleted')
         ;
     }
@@ -73,7 +73,7 @@ class BlogPostAdmin extends Admin
         $listMapper
             ->add('titlePageEn')
             ->add('categoryId', null, array('label'=>'Category'))
-            ->add('publishedAt')
+            ->add('publishedAt', 'doctrine_orm_datetime', array('template' => 'TicketsBundle:Default:list_datetime.html.twig'))
             ->add('isDeleted')
             ->add('_action', 'actions', array(
                 'actions' => array(
