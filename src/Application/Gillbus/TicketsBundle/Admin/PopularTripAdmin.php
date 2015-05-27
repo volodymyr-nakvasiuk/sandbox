@@ -1,0 +1,66 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: donnie
+ * Date: 26.05.15
+ * Time: 10:07
+ */
+
+namespace Application\Gillbus\TicketsBundle\Admin;
+
+
+use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Form\FormMapper;
+
+class PopularTripAdmin extends Admin
+{
+
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper
+            ->add('sortId')
+            ->add('departPlaceId', null, array('label' => 'Depart place'))
+            ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
+            ->add('beginDate')
+            ->add('endDate')
+            ->add('isDeleted')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
+                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
+                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
+                ),
+                'template' => 'TicketsBundle:Default:list__action.html.twig'
+            ));
+    }
+
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add('sortId')
+            ->add('beginDate')
+            ->add('endDate')
+            ->add('departPlaceId', null, array('label' => 'Depart place'))
+            ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
+            ->add('isDeleted');
+    }
+
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->with('Places')
+                ->add('departPlaceId', null, array('label' => 'Depart place'))
+                ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
+            ->end()
+            ->with('Dates')
+                ->add('beginDate')
+                ->add('endDate')
+            ->end()
+            ->add('imageUrl')
+            ->add('sortId')
+            ->add('isDeleted');
+    }
+
+}

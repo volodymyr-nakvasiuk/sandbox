@@ -10,6 +10,49 @@ services:
             - Application\Gillbus\TicketsBundle\Entity\BlogPost
             - SonataAdminBundle:CRUD
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog}
-        calls:
-            - [ setTemplate, [edit, TicketsBundle:BlogPostAdmin:edit.html.twig]]
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog Posts}
+
+    application_gillbus_tickets.admin.blogcategory:
+        class: Application\Gillbus\TicketsBundle\Admin\BlogCategoryAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\BlogCategory
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog Category}
+
+    application_gillbus_tickets.admin.place:
+        class: Application\Gillbus\TicketsBundle\Admin\PlaceAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\Place
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Places}
+
+    application_gillbus_tickets.admin.route:
+        class: Application\Gillbus\TicketsBundle\Admin\RouteAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\Route
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Routes}
+
+    application_gillbus_tickets.admin.promocode:
+        class: Application\Gillbus\TicketsBundle\Admin\PromoCodeAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\PromoCode
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Promo Codes}
+
+    application_gillbus_tickets.admin.populartrip:
+        class: Application\Gillbus\TicketsBundle\Admin\PopularTripAdmin
+        arguments:
+            - ~
+            - Application\Gillbus\TicketsBundle\Entity\PopularTrip
+            - SonataAdminBundle:CRUD
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Popular Trips}

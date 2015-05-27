@@ -8,6 +8,7 @@
 
 namespace Application\Gillbus\TicketsBundle\Admin;
 
+use Application\Gillbus\TicketsBundle\Entity\BlogPost;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -22,8 +23,8 @@ class BlogPostAdmin extends Admin
             ->with('English', array('tab' => true))
                 ->add('titleEn', 'text', array('required' => true, 'label' => 'Title'))
                 ->add('titlePageEn', null, array('label'=>'Page title', 'required' => false))
-                ->add('shortContentEn', null, array('label'=>'Short content', 'required' => false))
-                ->add('contentEn', null, array('label'=>'content', 'required' => false))
+                ->add('shortContentEn', 'textarea', array('label'=>'Short content', 'required' => false, 'attr' => array('class' => 'ckeditor')))
+                ->add('contentEn', 'textarea', array('label'=>'Content', 'required' => false, 'attr' => array('class' => 'ckeditor')))
                 ->add('descriptionEn', null, array('label'=>'Meta description', 'required' => false))
                 ->add('keywordsEn', 'text', array('label'=>'Meta keywords', 'required' => false))
                 ->end()
@@ -31,8 +32,8 @@ class BlogPostAdmin extends Admin
             ->tab('Thai')
                 ->add('titleTh', 'text', array('required' => true, 'label' => 'Title'))
                 ->add('titlePageTh', null, array('label'=>'Page title', 'required' => false))
-                ->add('shortContentTh', null, array('label'=>'Short content', 'required' => false))
-                ->add('contentTh', null, array('label'=>'content', 'required' => false))
+                ->add('shortContentTh', 'textarea', array('label'=>'Short content', 'required' => false, 'attr' => array('class' => 'ckeditor')))
+                ->add('contentTh', 'textarea', array('label'=>'Content', 'required' => false, 'attr' => array('class' => 'ckeditor')))
                 ->add('descriptionTh', null, array('label'=>'Meta description', 'required' => false))
                 ->add('keywordsTh', 'text', array('label'=>'Meta keywords', 'required' => false))
                 ->end()
@@ -40,17 +41,17 @@ class BlogPostAdmin extends Admin
             ->tab('Russian')
                 ->add('titleRu', 'text', array('required' => true, 'label' => 'Title'))
                 ->add('titlePageRu', null, array('label'=>'Page title', 'required' => false))
-                ->add('shortContentRu', null, array('label'=>'Short content', 'required' => false))
-                ->add('contentRu', null, array('label'=>'content', 'required' => false))
+                ->add('shortContentRu', 'textarea', array('label'=>'Short content', 'required' => false, 'attr' => array('class' => 'ckeditor')))
+                ->add('contentRu', 'textarea', array('label'=>'Content', 'required' => false, 'attr' => array('class' => 'ckeditor')))
                 ->add('descriptionRu', null, array('label'=>'Meta description', 'required' => false))
                 ->add('keywordsRu', 'text', array('label'=>'Meta keywords', 'required' => false))
                 ->end()
             ->end()
             ->tab('General')
-                ->add('category_id', 'text', array('required' => true, 'label' => 'Category'))
+                ->add('categoryId','entity', array('label' => 'Category', 'class'=>'Application\Gillbus\TicketsBundle\Entity\BlogCategory', 'property'=>'nameEn', ))
                 ->add('imageUrl')
                 ->add('publishedAt', 'datetime', array('required' => true, 'label' => 'Publishing date'))
-                ->add('is_deleted', 'checkbox', array('required' => true, 'label' => 'Visible'))
+                ->add('isDeleted', 'checkbox', array('required' => true))
                 ->end()
             ->end()
         ;
@@ -61,8 +62,7 @@ class BlogPostAdmin extends Admin
     {
         $datagridMapper
             ->add('titlePageEn')
-            ->add('categoryId')
-            ->add('createdAt')
+            ->add('categoryId', null, array('label'=>'Category'))
             ->add('publishedAt')
             ->add('isDeleted')
         ;
@@ -71,9 +71,18 @@ class BlogPostAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('titlePageEn')
+            ->add('titlePageEn')
+            ->add('categoryId', null, array('label'=>'Category'))
             ->add('publishedAt')
             ->add('isDeleted')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
+                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
+                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
+                ),
+                'template' => 'TicketsBundle:Default:list__action.html.twig'
+            ))
         ;
     }
 

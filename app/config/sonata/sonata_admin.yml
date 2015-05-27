@@ -44,11 +44,22 @@ sonata_admin:
 #            - { position: left, type: sonata.timeline.block.timeline, settings: { context: SONATA_ADMIN, max_per_page: 25 }}
             - { position: left, type: sonata.news.block.recent_posts, settings: { title: Recent Posts, number: 7, mode: admin }}
             - { position: left, type: sonata.news.block.recent_comments, settings: { title: Recent Comments, number: 7, mode: admin }}
-            - { position: right, type: sonata.order.block.recent_orders, settings: { title: Recent Orders, number: 5, mode: admin }}
-            - { position: right, type: sonata.customer.block.recent_customers, settings: { title: Recent Customers, number: 5, mode: admin }}
+#            - { position: right, type: sonata.order.block.recent_orders, settings: { title: Recent Orders, number: 5, mode: admin }}
+#            - { position: right, type: sonata.customer.block.recent_customers, settings: { title: Recent Customers, number: 5, mode: admin }}
             - { position: right, type: sonata.block.service.rss, settings: { title: Sonata Project's Feeds, url: http://sonata-project.org/blog/archive.rss, template: SonataAdminBundle:Block:block_rss_dashboard.html.twig }}
 
         groups:
+            sonata.admin.group.content:
+                label:           sonata_content
+                label_catalogue: SonataAdminBundle
+                icon:            '<i class="fa fa-th"></i>'
+                items:
+                     - application_gillbus_tickets.admin.blogcategory
+                     - application_gillbus_tickets.admin.blogpost
+                     - application_gillbus_tickets.admin.route
+                     - application_gillbus_tickets.admin.promocode
+                     - application_gillbus_tickets.admin.populartrip
+                roles: [ ROLE_ONE, ROLE_TWO ]
 
             sonata.admin.group.ecommerce:
                 label:           sonata_ecommerce
@@ -57,6 +68,22 @@ sonata_admin:
                 items:
                     - application_gillbus_etravels.admin.novaposhta
 
+            sonata.admin.group.dictionary:
+                label:           sonata_dictionary
+                label_catalogue: SonataAdminBundle
+                icon:            '<i class="fa fa-book"></i>'
+                items:
+                     - application_gillbus_tickets.admin.place
+
+            sonata.admin.group.administration:
+                label:           sonata_administration
+                label_catalogue: SonataAdminBundle
+                icon:            '<i class="fa fa-cogs"></i>'
+                items:
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group
+                    - sonata.page.admin.site
+                    - sonata.notification.admin.message
 
     assets:
         stylesheets:
