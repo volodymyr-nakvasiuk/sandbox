@@ -1,6 +1,9 @@
 #
 # more information can be found here http://sonata-project.org/bundles/admin
 #
+imports:
+    - { resource: services.yml }
+
 sonata_admin:
     # default value, change it to sonata.admin.security.handler.acl to use ACL
     security:
@@ -47,43 +50,6 @@ sonata_admin:
 #            - { position: right, type: sonata.order.block.recent_orders, settings: { title: Recent Orders, number: 5, mode: admin }}
 #            - { position: right, type: sonata.customer.block.recent_customers, settings: { title: Recent Customers, number: 5, mode: admin }}
             - { position: right, type: sonata.block.service.rss, settings: { title: Sonata Project's Feeds, url: http://sonata-project.org/blog/archive.rss, template: SonataAdminBundle:Block:block_rss_dashboard.html.twig }}
-
-        groups:
-            sonata.admin.group.content:
-                label:           sonata_content
-                label_catalogue: SonataAdminBundle
-                icon:            '<i class="fa fa-th"></i>'
-                items:
-                     - application_gillbus_tickets.admin.blogcategory
-                     - application_gillbus_tickets.admin.blogpost
-                     - application_gillbus_tickets.admin.route
-                     - application_gillbus_tickets.admin.promocode
-                     - application_gillbus_tickets.admin.populartrip
-                roles: [ ROLE_ONE, ROLE_TWO ]
-
-            sonata.admin.group.ecommerce:
-                label:           sonata_ecommerce
-                label_catalogue: SonataAdminBundle
-                icon:            '<i class="fa fa-dollar"></i>'
-                items:
-                    - application_gillbus_etravels.admin.novaposhta
-
-            sonata.admin.group.dictionary:
-                label:           sonata_dictionary
-                label_catalogue: SonataAdminBundle
-                icon:            '<i class="fa fa-book"></i>'
-                items:
-                     - application_gillbus_tickets.admin.place
-
-            sonata.admin.group.administration:
-                label:           sonata_administration
-                label_catalogue: SonataAdminBundle
-                icon:            '<i class="fa fa-cogs"></i>'
-                items:
-                    - sonata.user.admin.user
-                    - sonata.user.admin.group
-                    - sonata.page.admin.site
-                    - sonata.notification.admin.message
 
     assets:
         stylesheets:

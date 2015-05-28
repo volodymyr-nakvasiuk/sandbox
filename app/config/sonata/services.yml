@@ -1,0 +1,31 @@
+sonata_admin:
+    dashboard:
+        groups:
+             sonata.admin.group.content:
+                 label:           sonata_content
+                 label_catalogue: SonataAdminBundle
+                 icon:            '<i class="fa fa-th"></i>'
+                 items:
+                      - application_gillbus_tickets.admin.blogcategory
+                      - application_gillbus_tickets.admin.blogpost
+                      - application_gillbus_tickets.admin.route
+                      - application_gillbus_tickets.admin.promocode
+                      - application_gillbus_tickets.admin.populartrip
+                 roles: [ ROLE_ONE, ROLE_TWO ]
+
+             sonata.admin.group.dictionary:
+                 label:           sonata_dictionary
+                 label_catalogue: SonataAdminBundle
+                 icon:            '<i class="fa fa-book"></i>'
+                 items:
+                      - application_gillbus_tickets.admin.place
+
+             sonata.admin.group.administration:
+                 label:           sonata_administration
+                 label_catalogue: SonataAdminBundle
+                 icon:            '<i class="fa fa-cogs"></i>'
+                 items:
+                     - sonata.user.admin.user
+                     - sonata.user.admin.group
+                     - sonata.page.admin.site
+                     - sonata.notification.admin.message
