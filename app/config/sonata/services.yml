@@ -13,6 +13,13 @@ sonata_admin:
                       - application_gillbus_tickets.admin.populartrip
                  roles: [ ROLE_ONE, ROLE_TWO ]
 
+             sonata.admin.group.ecommerce:
+                 label:           sonata_ecommerce
+                 label_catalogue: SonataAdminBundle
+                 icon:            '<i class="fa fa-dollar"></i>'
+                 items:
+                     - application_gillbus_etravels.admin.novaposhta
+
              sonata.admin.group.dictionary:
                  label:           sonata_dictionary
                  label_catalogue: SonataAdminBundle
