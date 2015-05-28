@@ -16,17 +16,12 @@ class NovaPoshtaAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('dateCreate', 'doctrine_orm_datetime_range', array(),
-                'sonata_type_date_range',
-                array(
-                    'required' => false,
-                    'widget' => 'single_text',
-                    'attr' => array(
-                        'class' => 'datepicker',
-                        'data-date-format' => 'YYYY-MM-DD'
-                    )
-                )
-            );
+            ->add('dateCreate', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
+            ->add('recipientAddress')
+            ->add('statusId')
+            ->add('documentNum')
+            ->add('endReservation', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
+        ;
     }
     /**
      * @param ListMapper $listMapper
