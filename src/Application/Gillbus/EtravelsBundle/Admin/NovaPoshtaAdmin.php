@@ -17,6 +17,10 @@ class NovaPoshtaAdmin extends Admin
     {
         $datagridMapper
             ->add('dateCreate', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
+            ->add('recipientAddress')
+            ->add('statusId')
+            ->add('documentNum')
+            ->add('endReservation', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
         ;
     }
     /**
