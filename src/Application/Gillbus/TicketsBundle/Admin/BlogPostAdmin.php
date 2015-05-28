@@ -50,7 +50,7 @@ class BlogPostAdmin extends Admin
             ->tab('General')
                 ->add('categoryId','entity', array('label' => 'Category', 'class'=>'Application\Gillbus\TicketsBundle\Entity\BlogCategory', 'property'=>'nameEn', ))
                 ->add('imageUrl')
-                ->add('publishedAt', 'sonata_type_datetime_picker', array('required' => true, 'label' => 'Publishing date', 'format' => 'dd.MM.y HH:mm:sss'))
+                ->add('publishedAt', 'sonata_type_datetime_picker', array('required' => true, 'label' => 'Publishing date', 'format' => 'dd.MM.y HH:mm:ss'))
                 ->add('isDeleted', 'checkbox', array('required' => true))
                 ->end()
             ->end()

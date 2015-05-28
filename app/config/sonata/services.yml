@@ -11,7 +11,8 @@ sonata_admin:
                       - application_gillbus_tickets.admin.route
                       - application_gillbus_tickets.admin.promocode
                       - application_gillbus_tickets.admin.populartrip
-                 roles: [ ROLE_ONE, ROLE_TWO ]
+                 roles:
+                      - ROLE_TH_READER
 
              sonata.admin.group.dictionary:
                  label:           sonata_dictionary
