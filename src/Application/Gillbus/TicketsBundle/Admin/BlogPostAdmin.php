@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class BlogPostAdmin extends Admin
 {
@@ -83,6 +84,13 @@ class BlogPostAdmin extends Admin
                 ),
                 'template' => 'TicketsBundle:Default:list__action.html.twig'
             ))
+        ;
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->add('nameEn')
         ;
     }
 

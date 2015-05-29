@@ -10,7 +10,7 @@ services:
             - Application\Gillbus\TicketsBundle\Entity\BlogPost
             - SonataAdminBundle:CRUD
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: Blog Posts}
+            - {name: sonata.admin, manager_type: orm, group: user, label: Blog Posts}
 
     application_gillbus_tickets.admin.blogcategory:
         class: Application\Gillbus\TicketsBundle\Admin\BlogCategoryAdmin
