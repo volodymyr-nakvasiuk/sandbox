@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class RouteAdmin extends Admin
 {
@@ -78,6 +79,43 @@ class RouteAdmin extends Admin
             ->add('titleEn')
             ->add('url')
             ->add('isDeleted')
+        ;
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->with('English')
+            ->add('titleEn')
+            ->add('titlePageEn')
+            ->add('contentEn')
+            ->add('descriptionEn')
+            ->add('keywordsEn')
+            ->end()
+            ->end()
+            ->tab('Thai')
+            ->add('titleTh')
+            ->add('titlePageTh')
+            ->add('contentTh')
+            ->add('descriptionTh')
+            ->add('keywordsTh')
+            ->end()
+            ->end()
+            ->tab('Russian')
+            ->add('titleRu')
+            ->add('titlePageRu')
+            ->add('contentRu')
+            ->add('descriptionRu')
+            ->add('keywordsRu')
+            ->end()
+            ->end()
+            ->tab('General')
+            ->add('url')
+            ->add('departPlaceId')
+            ->add('arrivePlaceId')
+            ->add('isDeleted')
+            ->end()
+            ->end()
         ;
     }
 
