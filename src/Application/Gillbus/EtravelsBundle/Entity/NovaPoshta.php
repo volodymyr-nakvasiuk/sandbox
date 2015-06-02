@@ -20,8 +20,6 @@ class NovaPoshta
      */
     private $recipient = '';
 
-
-
     /**
      * @var \Application\Gillbus\EtravelsBundle\Entity\Payments
      *
@@ -31,13 +29,6 @@ class NovaPoshta
      * })
      */
     private $endReservation;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="recipient_address1", type="string", length=255, nullable=true)
-     */
-    private $recipientAddress1 = '';
 
     /**
      * @var string
