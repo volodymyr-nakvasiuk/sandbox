@@ -1,0 +1,3 @@
+application_gillbus_etravelspages_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: EtravelsPagesBundle:Default:index }
