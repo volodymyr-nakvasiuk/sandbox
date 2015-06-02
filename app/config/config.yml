@@ -108,7 +108,7 @@ doctrine:
 
             tickets:
                 driver:   %database_driver%
-                dbname:   %database_name_api%
+                dbname:   %database_name_tickets%
                 user:     %database_user%
                 host:     %database_host%
                 password: %database_password%
