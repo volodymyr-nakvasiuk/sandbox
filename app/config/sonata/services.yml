@@ -6,6 +6,7 @@ sonata_admin:
                  label_catalogue: SonataAdminBundle
                  icon:            '<i class="fa fa-th"></i>'
                  items:
+                      - application_gillbus_etravelspages.admin.etravelspages
                       - application_gillbus_tickets.admin.blogcategory
                       - application_gillbus_tickets.admin.blogpost
                       - application_gillbus_tickets.admin.route

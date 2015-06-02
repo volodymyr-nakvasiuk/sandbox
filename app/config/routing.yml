@@ -1,3 +1,7 @@
+etravels_pages:
+    resource: "@EtravelsPagesBundle/Resources/config/routing.yml"
+    prefix:   /pages
+
 application_gillbus_etravels:
     resource: "@ApplicationGillbusEtravelsBundle/Resources/config/routing.yml"
     prefix:   /

@@ -114,6 +114,14 @@ doctrine:
                 password: %database_password%
                 charset:  UTF8
 
+            etravels:
+                driver:   %database_driver%
+                dbname:   etravels
+                user:     %database_user%
+                host:     %database_host%
+                password: %database_password%
+                charset:  UTF8
+
         types:
             json:     Sonata\Doctrine\Types\JsonType
             currency: Sonata\Component\Currency\CurrencyDoctrineType
@@ -127,6 +135,7 @@ doctrine:
                 connection: default
                 auto_mapping: true
                 mappings: ~
+
             api_etravels:
                 connection: api_etravels
                 mappings:
@@ -135,6 +144,11 @@ doctrine:
                 connection: tickets
                 mappings:
                     TicketsBundle: ~
+
+            etravels:
+                connection: etravels
+                mappings:
+                    EtravelsPagesBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:

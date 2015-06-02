@@ -122,6 +122,7 @@ class AppKernel extends Kernel
             new Mopa\Bundle\BootstrapBundle\MopaBootstrapBundle(),
             new Application\Gillbus\EtravelsBundle\ApplicationGillbusEtravelsBundle(),
             new Application\Gillbus\TicketsBundle\TicketsBundle(),
+            new Application\Gillbus\EtravelsPagesBundle\EtravelsPagesBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
