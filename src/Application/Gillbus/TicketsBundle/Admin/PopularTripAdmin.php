@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class PopularTripAdmin extends Admin
 {
@@ -23,8 +24,8 @@ class PopularTripAdmin extends Admin
             ->add('sortId')
             ->add('departPlaceId', null, array('label' => 'Depart place'))
             ->add('arrivePlaceId', null, array('label' => 'Arrive place'))
-            ->add('beginDate')
-            ->add('endDate')
+            ->add('beginDate', 'doctrine_orm_datetime', array('template' => 'TicketsBundle:Default:list_datetime.html.twig'))
+            ->add('endDate', 'doctrine_orm_datetime', array('template' => 'TicketsBundle:Default:list_datetime.html.twig'))
             ->add('isDeleted')
             ->add('_action', 'actions', array(
                 'actions' => array(
@@ -61,6 +62,23 @@ class PopularTripAdmin extends Admin
             ->add('imageUrl')
             ->add('sortId')
             ->add('isDeleted');
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->with('Places')
+            ->add('departPlaceId')
+            ->add('arrivePlaceId')
+            ->end()
+            ->with('Dates')
+            ->add('beginDate')
+            ->add('endDate')
+            ->end()
+            ->add('imageUrl')
+            ->add('sortId')
+            ->add('isDeleted')
+        ;
     }
 
 }

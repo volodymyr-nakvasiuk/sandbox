@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class BlogPostAdmin extends Admin
 {
@@ -50,7 +51,7 @@ class BlogPostAdmin extends Admin
             ->tab('General')
                 ->add('categoryId','entity', array('label' => 'Category', 'class'=>'Application\Gillbus\TicketsBundle\Entity\BlogCategory', 'property'=>'nameEn', ))
                 ->add('imageUrl')
-                ->add('publishedAt', 'sonata_type_datetime_picker', array('required' => true, 'label' => 'Publishing date', 'format' => 'dd.MM.y HH:mm:sss'))
+                ->add('publishedAt', 'sonata_type_datetime_picker', array('required' => true, 'label' => 'Publishing date', 'format' => 'dd.MM.y HH:mm:ss'))
                 ->add('isDeleted', 'checkbox', array('required' => true))
                 ->end()
             ->end()
@@ -83,6 +84,46 @@ class BlogPostAdmin extends Admin
                 ),
                 'template' => 'TicketsBundle:Default:list__action.html.twig'
             ))
+        ;
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->tab('English')
+            ->add('titleEn')
+            ->add('titlePageEn')
+            ->add('shortContentEn')
+            ->add('contentEn')
+            ->add('descriptionEn')
+            ->add('keywordsEn')
+            ->end()
+            ->end()
+            ->tab('Thai')
+            ->add('titleTh')
+            ->add('titlePageTh')
+            ->add('shortContentTh')
+            ->add('contentTh')
+            ->add('descriptionTh')
+            ->add('keywordsTh')
+            ->end()
+            ->end()
+            ->tab('Russian')
+            ->add('titleRu')
+            ->add('titlePageRu')
+            ->add('shortContentRu')
+            ->add('contentRu')
+            ->add('descriptionRu')
+            ->add('keywordsRu')
+            ->end()
+            ->end()
+            ->tab('General')
+            ->add('categoryId')
+            ->add('imageUrl')
+            ->add('publishedAt')
+            ->add('isDeleted')
+            ->end()
+            ->end()
         ;
     }
 

@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class PlaceAdmin extends Admin
 {
@@ -49,6 +50,17 @@ class PlaceAdmin extends Admin
     {
         $datagridMapper
             ->add('nameEn')
+            ->add('gillbusId')
+            ->add('placeTypeId')
+        ;
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->add('nameEn')
+            ->add('nameTh')
+            ->add('nameRu')
             ->add('gillbusId')
             ->add('placeTypeId')
         ;

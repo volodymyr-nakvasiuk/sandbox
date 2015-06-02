@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Show\ShowMapper;
 
 class BlogCategoryAdmin extends Admin
 {
@@ -54,6 +55,17 @@ class BlogCategoryAdmin extends Admin
             ->add('nameEn')
             ->add('nameTh')
             ->add('nameRu')
+            ->add('isDeleted')
+        ;
+    }
+
+    protected function configureShowFields(ShowMapper $showMapper)
+    {
+        $showMapper
+            ->add('nameEn')
+            ->add('nameTh')
+            ->add('nameRu')
+            ->add('sortId')
             ->add('isDeleted')
         ;
     }
