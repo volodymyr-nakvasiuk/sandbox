@@ -110,15 +110,6 @@ class NovaPoshta
         return $this->recipient;
     }
 
-    /**
-     * Get recipientAddress1
-     *
-     * @return string
-     */
-    public function getRecipientAddress1()
-    {
-        return $this->recipientAddress1;
-    }
 
     /**
      * Get orderNumber
