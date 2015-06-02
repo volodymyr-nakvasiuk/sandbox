@@ -12,10 +12,17 @@ use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\AdminBundle\Show\ShowMapper;
 
 class BlogCategoryAdmin extends Admin
 {
+    protected function configureRoutes(RouteCollection $collection){
+
+        $collection->remove('show');
+        $collection->add('show',  $this->getRouterIdParameter().'/edit');
+
+    }
 
     protected function configureListFields(ListMapper $listMapper)
     {
@@ -27,11 +34,8 @@ class BlogCategoryAdmin extends Admin
             ->add('isDeleted')
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
-                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
-                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
-                ),
-                'template' => 'TicketsBundle:Default:list__action.html.twig'
+                    'show' => array()
+                )
             ))
         ;
     }

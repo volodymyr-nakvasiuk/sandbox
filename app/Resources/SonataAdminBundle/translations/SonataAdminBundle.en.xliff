@@ -14,6 +14,36 @@
                 <source>sonata_content</source>
                 <target>SEO pages</target>
             </trans-unit>
+
+
+            <trans-unit id="sonata_ecommerce_th">
+                <source>sonata_ecommerce_th</source>
+                <target>Analytics</target>
+            </trans-unit>
+            <trans-unit id="sonata_dictionary_th">
+                <source>sonata_dictionary_th</source>
+                <target>Dictionaries</target>
+            </trans-unit>
+            <trans-unit id="sonata_content_th">
+                <source>sonata_content_th</source>
+                <target>SEO pages</target>
+            </trans-unit>
+
+
+            <trans-unit id="sonata_ecommerce_etr">
+                <source>sonata_ecommerce_etr</source>
+                <target>Analytics</target>
+            </trans-unit>
+            <trans-unit id="sonata_dictionary_etr">
+                <source>sonata_dictionary_etr</source>
+                <target>Dictionaries</target>
+            </trans-unit>
+            <trans-unit id="sonata_content_etr">
+                <source>sonata_content_etr</source>
+                <target>SEO pages</target>
+            </trans-unit>
+
+
             <trans-unit id="action_title">
                 <source>action_title</source>
                 <target>Action</target>
