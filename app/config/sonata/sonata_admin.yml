@@ -2,7 +2,7 @@
 # more information can be found here http://sonata-project.org/bundles/admin
 #
 imports:
-    - { resource: services.yml }
+    - { resource: sonata_env_config.yml }
 
 sonata_admin:
     # default value, change it to sonata.admin.security.handler.acl to use ACL

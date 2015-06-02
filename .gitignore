@@ -16,4 +16,4 @@
 /bin/doctrine-dbal.bat
 /composer.phar
 
-app/config/sonata/loader.yml
+app/config/sonata/sonata_env_config.yml
