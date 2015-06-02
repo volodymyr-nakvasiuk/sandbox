@@ -116,7 +116,7 @@ doctrine:
 
             etravels:
                 driver:   %database_driver%
-                dbname:   etravels
+                dbname:   %database_name_etr%
                 user:     %database_user%
                 host:     %database_host%
                 password: %database_password%

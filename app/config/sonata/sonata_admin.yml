@@ -134,3 +134,6 @@ sonata_admin:
 #            - bundles/sonataformatter/markitup/sets/html/set.js
 #            - bundles/sonataformatter/markitup/sets/textile/set.js
 #            - bundles/sonatapage/sonata-page.back.js
+            - bundles/etravels/js/jquery-ui-ex.js
+            - bundles/etravels/js/form-city-autocomplete.js
+

@@ -32,12 +32,6 @@ class NovaPoshta
      */
     private $endReservation;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="recipient_address1", type="string", length=255, nullable=true)
-     */
-    private $recipientAddress1 = '';
 
     /**
      * @var string
@@ -119,15 +113,6 @@ class NovaPoshta
         return $this->recipient;
     }
 
-    /**
-     * Get recipientAddress1
-     *
-     * @return string
-     */
-    public function getRecipientAddress1()
-    {
-        return $this->recipientAddress1;
-    }
 
     /**
      * Get orderNumber
