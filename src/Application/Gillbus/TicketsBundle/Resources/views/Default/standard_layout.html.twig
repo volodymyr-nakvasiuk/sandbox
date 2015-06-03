@@ -312,12 +312,12 @@ file that was distributed with this source code.
 
                                 {% if _list_table is not empty or _list_filters is not empty %}
                                     <div class="row">
-                                        <div class="sonata-ba-list {% if _list_filters|trim %}col-md-10{% else %}col-md-12{% endif %}">
+                                        <div class="sonata-ba-list {% if _list_filters|trim %}col-md-9{% else %}col-md-12{% endif %}">
                                             {{ _list_table|raw }}
                                         </div>
 
                                         {% if _list_filters|trim %}
-                                            <div class="sonata-ba-filter col-md-2">
+                                            <div class="sonata-ba-filter col-md-3">
                                                 {{ _list_filters|raw }}
                                             </div>
                                         {% endif %}

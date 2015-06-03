@@ -19,5 +19,5 @@ tickets_promocode:
     defaults: { _controller: TicketsBundle:PromoCode:index }
 
 tickets_populartrips:
-    path:     /promocode
+    path:     /populartrips
     defaults: { _controller: TicketsBundle:PopularTrip:index }

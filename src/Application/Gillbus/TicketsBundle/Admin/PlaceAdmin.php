@@ -23,14 +23,11 @@ class PlaceAdmin extends Admin
         $listMapper
             ->add('nameEn')
             ->add('gillbusId')
-            ->add('placeTypeId')
+//            ->add('placeTypeId')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
-                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
-                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
                 ),
-                'template' => 'TicketsBundle:Default:list__action.html.twig'
             ))
         ;
     }
@@ -42,7 +39,7 @@ class PlaceAdmin extends Admin
             ->add('nameTh', null, array('required' => false))
             ->add('nameRu', null, array('required' => false))
             ->add('gillbusId', null, array('required' => false))
-            ->add('placeTypeId', null, array('required' => false))
+            ->add('placeTypeId', 'hidden', array('required' => false, 'data' => 1))
         ;
     }
 
@@ -51,7 +48,7 @@ class PlaceAdmin extends Admin
         $datagridMapper
             ->add('nameEn')
             ->add('gillbusId')
-            ->add('placeTypeId')
+//            ->add('placeTypeId')
         ;
     }
 
@@ -62,7 +59,7 @@ class PlaceAdmin extends Admin
             ->add('nameTh')
             ->add('nameRu')
             ->add('gillbusId')
-            ->add('placeTypeId')
+//            ->add('placeTypeId')
         ;
     }
 

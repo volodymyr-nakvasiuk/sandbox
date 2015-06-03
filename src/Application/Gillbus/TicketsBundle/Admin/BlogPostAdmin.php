@@ -62,9 +62,9 @@ class BlogPostAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('titlePageEn')
+            ->add('titlePageRu', null, array('label'=>'Page title ru'))
             ->add('categoryId', null, array('label'=>'Category'))
-            ->add('publishedAt', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
+            ->add('publishedAt', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y', 'label' => 'Publishing date'), null, array('format' => 'dd.MM.y'))
             ->add('isDeleted')
         ;
     }
@@ -72,17 +72,14 @@ class BlogPostAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('titlePageEn')
+            ->add('titlePageRu', null, array('label'=>'Page title ru'))
             ->add('categoryId', null, array('label'=>'Category'))
-            ->add('publishedAt', 'doctrine_orm_datetime', array('template' => 'TicketsBundle:Default:list_datetime.html.twig'))
+            ->add('publishedAt', 'doctrine_orm_datetime', array('template' => 'TicketsBundle:Default:list_datetime.html.twig', 'label' => 'Publishing date'))
             ->add('isDeleted')
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
-                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
-                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
                 ),
-                'template' => 'TicketsBundle:Default:list__action.html.twig'
             ))
         ;
     }
