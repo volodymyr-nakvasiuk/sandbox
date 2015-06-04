@@ -27,11 +27,8 @@ class BlogCategoryAdmin extends Admin
             ->add('isDeleted')
             ->add('_action', 'actions', array(
                 'actions' => array(
-                    'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig'),
-                    'edit' => array('template' => 'TicketsBundle:Default:list__action_edit.html.twig'),
-                    'delete' => array('template' => 'TicketsBundle:Default:list__action_delete.html.twig'),
-                ),
-                'template' => 'TicketsBundle:Default:list__action.html.twig'
+                    'show' => array('template' => 'TicketsBundle:Default:list__action_show.html.twig')
+                )
             ))
         ;
     }
