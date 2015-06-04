@@ -125,4 +125,9 @@ class Client
     {
         return $this->id;
     }
+
+    public function __toString()
+    {
+        return $this->email.', '.$this->phone;
+    }
 }

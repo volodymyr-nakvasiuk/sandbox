@@ -19,16 +19,20 @@ class EtravelsPagesAdmin extends Admin
             ->add('titleRu')
         ;
     }*/
+
+
+
+
     /**
      * @param ListMapper $listMapper
      */
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id', null, array('label'=>'Id'))
-            ->add('url', null, array('label'=>'Url'))
-            ->add('isDeleted', null, array('label'=>'isDeleted'))
-            ->add('titleRu', null, array('label'=>'titleRu'))
+        //    ->add('id', null, array('label'=>'Id'))
+            ->add('url', null, array('label'=>'url'))
+            ->add('isDeleted', null, array('label'=>'is deleted'))
+            ->add('titleRu', null, array('label'=>'title RU'))
 /*            ->add('descriptionRu', null, array('label'=>'descriptionRu'))
             ->add('keywordsRu', null, array('label'=>'keywordsRu'))
             ->add('visibleTextRu', null, array('label'=>'visibleTextRu'))
@@ -42,15 +46,15 @@ class EtravelsPagesAdmin extends Admin
             ->add('descriptionUa', null, array('label'=>'descriptionUa'))
             ->add('keywordsUa;', null, array('label'=>'keywordsUa;'))
             ->add('visibleTextUa', null, array('label'=>'visibleTextUa'))
-            ->add('hiddenTextUa', null, array('label'=>'hiddenTextUa'))*/
+            ->add('hiddenTextUa', null, array('label'=>'hiddenTextUa'))
             ->add('searchCityFrom', null, array('label'=>'searchCityFrom'))
-            ->add('searchCityTo', null, array('label'=>'searchCityTo'))
-  /*          ->add('_action', 'actions', array(
+            ->add('searchCityTo', null, array('label'=>'searchCityTo'))*/
+           ->add('_action', 'actions', array(
                 'actions' => array(
                     'show' => array(),
                     'edit' => array(),
                 )
-            ))*/
+            ))
         ;
     }
 
@@ -61,50 +65,43 @@ class EtravelsPagesAdmin extends Admin
     protected function configureShowFields(ShowMapper $showMapper)
     {
         $showMapper
-            ->add('id')
-            ->add('url')
+            ->add('url', null, array('label'=>'url'))
+            ->add('isDeleted', null, array('label'=>'is deleted'))
+            ->add('titleRu', null, array('label'=>'title RU'))
+            ->add('descriptionRu', null, array('label'=>'description RU'))
+            ->add('keywordsRu', null, array('label'=>'keywords RU'))
+            ->add('visibleTextRu', null, array('label'=>'visible text RU'))
+            ->add('hiddenTextRu', null, array('label'=>'hidden text RU'))
+            ->add('titleEn', null, array('label'=>'title EN'))
+            ->add('descriptionEn', null, array('label'=>'description EN'))
+            ->add('keywordsEn', null, array('label'=>'keywords EN'))
+            ->add('visibleTextEn', null, array('label'=>'visible text EN'))
+            ->add('hiddenTextEn', null, array('label'=>'hidden text EN'))
+            ->add('titleUa', null, array('label'=>'title UA'))
+            ->add('descriptionUa', null, array('label'=>'description UA'))
+            ->add('keywordsUa;', null, array('label'=>'keywords UA'))
+            ->add('visibleTextUa', null, array('label'=>'visible text UA'))
+            ->add('hiddenTextUa', null, array('label'=>'hidden text UA'))
+            ->add('searchCityFrom', null, array('label'=>'search city from'))
+            ->add('searchCityTo', null, array('label'=>'search city to'))
         ;
     }
 
     protected function configureFormFields(FormMapper $formMapper)
     {
-
-/*        private $url;
-        private $isDeleted;
-        private $titleRu;
-        private $descriptionRu;
-        private $keywordsRu;
-        private $visibleTextRu;
-        private $hiddenTextRu;
-        private $titleEn;
-        private $descriptionEn;
-        private $keywordsEn;
-        private $visibleTextEn;
-        private $hiddenTextEn;
-        private $titleUa;
-        private $descriptionUa;
-        private $keywordsUa;
-        private $visibleTextUa;
-        private $hiddenTextUa;
-        private $searchCityFrom;
-        private $searchCityTo;*/
         $formMapper
             ->tab('Russian')
-            ->add('titleRu', 'text', array('required' => true, 'label' => 'Page title'))
-            ->add('url', 'text', array('required' => true, 'label' => 'Url'))
-            ->add('descriptionRu', null, array('label'=>'Meta description', 'required' => false))
-            ->add('keywordsRu', null, array('label'=>'Meta keywords', 'required' => false))
-            ->add('visibleTextRu', 'textarea', array('label'=>'Visible Text', 'required' => true, 'attr' => array('class' => 'ckeditor')))
-            ->add('hiddenTextRu', 'textarea', array('label'=>'Hidden Text', 'required' => true, 'attr' => array('class' => 'ckeditor')))
-            ->add('searchCityFrom', null, array('label'=>'searchCityFrom', 'required' => false,'attr' => array('class' => 'searchCityFrom')))
-            ->add('searchCityTo', null, array('label'=>'searchCityTo', 'required' => false, 'attr' => array('class' => 'searchCityTo')))
-            ->add('isDeleted', 'checkbox', array('required' => false))
+            ->add('titleRu', 'text', array('required' => true, 'label' => 'page title'))
+            ->add('url', 'text', array('required' => true, 'label' => 'url'))
+            ->add('descriptionRu', null, array('label'=>'meta description', 'required' => false))
+            ->add('keywordsRu', null, array('label'=>'meta keywords', 'required' => false))
+            ->add('visibleTextRu', 'textarea', array('label'=>'visible text', 'required' => true, 'attr' => array('class' => 'ckeditor')))
+            ->add('hiddenTextRu', 'textarea', array('label'=>'hidden text', 'required' => true, 'attr' => array('class' => 'ckeditor')))
+            ->add('searchCityFrom', null, array('label'=>'search city from', 'required' => false,'attr' => array('class' => 'searchCityFrom')))
+            ->add('searchCityTo', null, array('label'=>'search city to', 'required' => false, 'attr' => array('class' => 'searchCityTo')))
+            ->add('isDeleted', 'checkbox', array('label'=>'is deleted','required' => false))
             ->end()
             ->end()
         ;
     }
-
-/*$formMapper->add('my_property',
-'choice',
-array('choices' => MyEnitity::get_enum_values('my_property') );*/
 }

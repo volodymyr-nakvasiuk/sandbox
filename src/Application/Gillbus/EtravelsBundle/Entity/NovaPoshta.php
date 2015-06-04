@@ -122,6 +122,35 @@ class NovaPoshta
     }
 
     /**
+     * Get novaPoshtaTax
+     *
+     * @return string
+     */
+    public function getNovaPoshtaTax()
+    {
+        return $this->endReservation->endReservation->getNovaPoshtaTax();
+    }
+
+    /**
+     * Get novaPoshtaAmount
+     *
+     * @return string
+     */
+    public function getNovaPoshtaAmount()
+    {
+        return $this->endReservation->endReservation->getNovaPoshtaAmount();
+    }
+    /**
+     * Get novaPoshtaCheat
+     *
+     * @return string
+     */
+    public function getNovaPoshtaCheat()
+    {
+        return $this->endReservation->endReservation->getNovaPoshtaCheat();
+    }
+
+    /**
      * Get orderAmount
      *
      * @return string
@@ -129,6 +158,16 @@ class NovaPoshta
     public function getOrderAmount()
     {
         return 0+(float)$this->endReservation->endReservation->orderAmount;
+    }
+
+    /**
+     * Get paymentAmount
+     *
+     * @return string
+     */
+    public function getPaymentAmount()
+    {
+        return 0+(float)$this->endReservation->paymentAmount;
     }
 
     /**

@@ -55,6 +55,13 @@ class Payments
     public $endReservation;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="amount", type="string")
+     */
+    public $paymentAmount;
+
+    /**
      * @var \Application\Gillbus\EtravelsBundle\Entity\Order
      *
      * @ORM\ManyToOne(targetEntity="Application\Gillbus\EtravelsBundle\Entity\Order")
@@ -179,6 +186,15 @@ class Payments
     public function getDateCreate()
     {
         return $this->dateCreate;
+    }
+    /**
+     * Get paymentAmount
+     *
+     * @return string
+     */
+    public function getPaymentAmount()
+    {
+        return 0+(float)$this->paymentAmount;
     }
 
     public function __toString()

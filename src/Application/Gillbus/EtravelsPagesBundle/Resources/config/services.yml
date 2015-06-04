@@ -7,5 +7,5 @@ services:
         class: Application\Gillbus\EtravelsPagesBundle\Admin\EtravelsPagesAdmin
         arguments: [~, Application\Gillbus\EtravelsPagesBundle\Entity\Pages, SonataAdminBundle:CRUD]
         tags:
-            - {name: sonata.admin, manager_type: orm, group: admin, label: EtravelsPages}
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Etravels Pages}
 

@@ -29,6 +29,9 @@ class NovaPoshtaAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+/*            ->add('novaPoshtaTax', null, array('label'=>'novaPoshtaTax'))
+            ->add('novaPoshtaCheat', null, array('label'=>'novaPoshtaCheat'))
+            ->add('novaPoshtaAmount', null, array('label'=>'novaPoshtaAmount'))*/
             ->add('dateCreate', null, array('label'=>'Create'))
             ->add('recipientAddress', null, array('label'=>'Address'))
             ->add('statusId', null, array('label'=>'Status'))
@@ -64,7 +67,26 @@ class NovaPoshtaAdmin extends Admin
             ->with('Extended', array('tabs'=>true))
             ->add('recipient')
             ->add('documentRef')
+            ->add('paymentAmount', null, array('label'=>'Payment Amount'))
+            ->add('novaPoshtaAmount', null, array('label'=>'Nova Poshta Amount'))
+            ->add('novaPoshtaCheat', null, array('label'=>'Nova Poshta Cheat'))
+            ->add('novaPoshtaTax', null, array('label'=>'Nova Poshta Tax'))
             ->end()
         ;
+    }
+
+    public function getExportFields() {
+        return array(
+            'dateCreate',
+            'documentNum',
+            'orderNumber',
+            'statusId',
+            'orderAmount',
+            'paymentAmount',
+            'novaPoshtaAmount',
+            'novaPoshtaCheat',
+            'novaPoshtaTax',
+
+        );
     }
 }

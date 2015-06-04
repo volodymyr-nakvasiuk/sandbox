@@ -29,6 +29,13 @@ class Order
     /**
      * @var string
      *
+     * @ORM\Column(name="system_number", type="string", length=20, nullable=false)
+     */
+    public $systemNumber;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="amount", type="string")
      */
     public $orderAmount;
@@ -71,7 +78,7 @@ class Order
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_create", type="datetime", nullable=false)
+     * @ORM\Column(name="date_create", type="string", nullable=false)
      */
     private $dateCreate;
 
@@ -160,6 +167,86 @@ class Order
     {
         return $this->orderNumber;
     }
+
+    public $novaPoshtaAmount = 0;
+    /**
+     * Get novaPoshtaAmount
+     *
+     * @return string
+     */
+    public function getNovaPoshtaAmount()
+    {
+        $posts = $this->postings->toArray();
+        $amount = 0;
+        foreach($posts as $posting) {
+            if($posting->postingType == 'nova_poshta_amount') {
+                $amount = $posting->amount;
+            }
+        }
+        return $this->novaPoshtaAmount = 0+(float)$amount;
+    }
+    public $novaPoshtaTax = 0;
+    /**
+     * Get novaPoshtaTax
+     *
+     * @return string
+     */
+    public function getNovaPoshtaTax()
+    {
+        $posts = $this->postings->toArray();
+        $amount = 0;
+        foreach($posts as $posting) {
+            if($posting->postingType == 'nova_poshta_tax') {
+                $amount = $posting->amount;
+            }
+        }
+        return $this->novaPoshtaTax = 0+(float)$amount;
+    }
+
+    public $novaPoshtaCheat = 0;
+    /**
+     * Get novaPoshtaCheat
+     *
+     * @return string
+     */
+    public function getNovaPoshtaCheat()
+    {
+        $posts = $this->postings->toArray();
+        $amount = 0;
+        foreach($posts as $posting) {
+            if($posting->postingType == 'nova_poshta_cheat') {
+                $amount = $posting->amount;
+            }
+        }
+        return $this->novaPoshtaCheat = 0+(float)$amount;
+    }
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Posting", mappedBy="order")
+     */
+    protected $postings;
+
+    /**
+     * Get postings
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPostings()
+    {
+        return $this->postings;
+    }
+
+
+    /**
+     * Get systemNumber
+     *
+     * @return string
+     */
+    public function getSystemNumber()
+    {
+        return $this->systemNumber;
+    }
     /**
      * Get orderAmount
      *
@@ -167,7 +254,7 @@ class Order
      */
     public function getOrderAmount()
     {
-        return $this->orderAmount;
+        return 0+(float)$this->orderAmount;
     }
 
     /**
@@ -311,7 +398,7 @@ class Order
      */
     public function getDateCreate()
     {
-        return $this->dateCreate;
+        return date('d.m.Y H:i', strtotime($this->dateCreate));
     }
 
     /**
@@ -321,7 +408,7 @@ class Order
      */
     public function getDateEndReservation()
     {
-        return date('d.m.Y H:i', strtotime($this->dateEndReservation));
+        return empty($this->dateEndReservation) ? '' : date('d.m.Y H:i', strtotime($this->dateEndReservation));
     }
 
     /**
