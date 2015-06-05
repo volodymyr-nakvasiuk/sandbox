@@ -29,10 +29,21 @@ class Pages
     private $url;
 
     /**
+     * @ORM\Column(name="type", type="string", columnDefinition="enum('bus', 'avia', 'train', 'transfer', 'none')")
+     */
+    private $type;
+
+    /**
      * @var boolean
      * @ORM\Column(name="is_deleted", type="boolean")
      */
     private $isDeleted;
+
+    /**
+     * @var boolean
+     * @ORM\Column(name="has_benefits", type="boolean")
+     */
+    private $hasBenefits;
 
     /**
      * @var string
@@ -238,6 +249,30 @@ class Pages
     {
         return $this->hiddenTextRu;
     }
+
+
+    /**
+     * Set type
+     *
+     * @param string $value
+     * @return Pages
+     */
+    public function setType($value)
+    {
+        $this->type = $value;
+        return $this;
+    }
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+
     /**
      * Set titleEn
      *
@@ -530,6 +565,27 @@ class Pages
     public function getIsDeleted()
     {
         return $this->isDeleted;
+    }
+
+    /**
+     * Set hasBenefits
+     *
+     * @param boolean $hasBenefits
+     * @return Pages
+     */
+    public function setHasBenefits($hasBenefits)
+    {
+        $this->hasBenefits = $hasBenefits;
+        return $this;
+    }
+    /**
+     * Get hasBenefits
+     *
+     * @return boolean
+     */
+    public function getHasBenefits()
+    {
+        return $this->hasBenefits;
     }
 
   public function __toString() { return (string) $this->titleRu; }
