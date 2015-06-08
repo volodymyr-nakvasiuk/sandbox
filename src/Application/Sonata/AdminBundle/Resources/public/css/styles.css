@@ -78,14 +78,14 @@ label {
 }
 .select2-container-active {border: none;}
 .form-control.select2-container {margin-bottom: 8px;}
-.form-control {font-size: 12px;}
+.form-control {font-size: 12px;  padding: 0px 5px;}
 .select2-container-active .select2-choice,
 .select2-container-active .select2-choices,
 .select2-drop-active {
-    border: 1px solid #EE8366;
+    border: 1px solid #3C8DBC;
 }
 .select2-results .select2-highlighted {
-    background: #EE8366;
+    background: #3C8DBC;
     opacity: 0.7;
     font-size: 12px;
 }
@@ -95,7 +95,7 @@ label {
 }
 .select2-search input {margin-top: 3px;}
 .form-control.select2-container.select2-dropdown-open {
-    border-color: #EE8366;
+    border-color: #3C8DBC;
     border: none;
     outline: none;
 }
@@ -111,9 +111,9 @@ label {
     font-weight: bold;
 }
 /*.select2-container .select2-choice:focus {border: 1px solid transparent;}*/
-.select2-drop.select2-drop-above.select2-drop-active {border-top: 1px solid #EE8366;}
+.select2-drop.select2-drop-above.select2-drop-active {border-top: 1px solid #3C8DBC;}
 .select2-dropdown-open.select2-drop-above .select2-choice,
-.select2-dropdown-open.select2-drop-above .select2-choices {border: 1px solid #EE8366;}
+.select2-dropdown-open.select2-drop-above .select2-choices {border: 1px solid #3C8DBC;}
 .btn-group {margin-left: 5px;}
 .skin-black .navbar .navbar-right .nav a.dropdown-toggle {color: #fff;}
 .skin-black .navbar .nav.breadcrumb a,
@@ -172,7 +172,7 @@ label {
     height: 15px;
     line-height: 15px;
 }
-.bootstrap-datetimepicker-widget {width: 212px;}
+.bootstrap-datetimepicker-widget {width: 185px;}
 .bootstrap-datetimepicker-widget td.day {
     height: 15px;
     line-height: 15px;
@@ -225,3 +225,7 @@ body > .header .logo {
 }
 body.fixed .wrapper {margin-top: 49px;}
 .left-side {top: 49px;}
+
+.table>thead>tr>th {
+    padding: 10px 5px;
+}
