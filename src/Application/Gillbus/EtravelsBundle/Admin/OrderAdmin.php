@@ -19,6 +19,7 @@ class OrderAdmin extends Admin
             ->add('dateCreate', 'doctrine_orm_datetime_range', array('field_type'=>'sonata_type_datetime_range_picker', 'format' => 'dd.MM.y'), null, array('format' => 'dd.MM.y'))
             ->add('orderNumber')
             ->add('status')
+            ->add('sduser', null, array('sortable' => true, 'label' => 'Sd_user'))
         ;
     }
     /**
@@ -27,6 +28,7 @@ class OrderAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
+     #       ->add('sdUser', null, array('label'=>'sdUser'))
             ->add('dateCreate', null, array('label'=>'date create'))
     #       ->add('oid', null, array('label'=>'oid'))
             ->add('orderNumber', null, array('label'=>'order number'))
