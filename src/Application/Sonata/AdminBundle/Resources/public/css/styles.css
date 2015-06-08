@@ -43,7 +43,7 @@ body > .header .navbar,
 .form-control:focus {border-color: #EE8366 !important;}
 label {
     color: #000;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     font-size: 12px;
     margin-bottom: 3px;
 }
@@ -72,7 +72,11 @@ label {
     font-size: 12px;
 }
 .input-group-addon {font-size: 12px;}
-.sonata-ba-list .form-control.select2-container {margin-bottom: 0px;}
+.sonata-ba-list .form-control.select2-container {
+    margin-bottom: 0px;
+    outline: none;
+}
+.select2-container-active {border: none;}
 .form-control.select2-container {margin-bottom: 8px;}
 .form-control {font-size: 12px;}
 .select2-container-active .select2-choice,
@@ -90,7 +94,11 @@ label {
     border: 1px solid #EE8366;
 }
 .select2-search input {margin-top: 3px;}
-.form-control.select2-container.select2-dropdown-open {border-color: #EE8366;}
+.form-control.select2-container.select2-dropdown-open {
+    border-color: #EE8366;
+    border: none;
+    outline: none;
+}
 .select2-results {padding: 0;}
 .select2-search {
     padding-left: 0;
@@ -159,3 +167,61 @@ label {
     line-height: 24px;
 }
 .select2-container .select2-choice abbr {top: 5px;}
+.datepicker td, .datepicker th {
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+}
+.bootstrap-datetimepicker-widget {width: 212px;}
+.bootstrap-datetimepicker-widget td.day {
+    height: 15px;
+    line-height: 15px;
+}
+.table-condensed>tbody>tr>td {padding: 3px 2px;}
+body.fixed .wrapper {
+    margin-top: 70px;
+}
+.skin-black .treeview-menu > li.active > a,
+.skin-black .treeview-menu > li > a:hover {color: #EE8366;}
+div.connection form {
+    padding: 15px 20px;
+}
+div.connection {
+    width: 444px;
+    margin: 0px 0 0 -222px;
+}
+div.connection .control-group {
+    padding: 0;
+    margin-bottom: 10px;
+}
+div.connection div input.big {
+    height: 25px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+.connection label {text-transform: none;}
+div.connection .form-actions {padding: 0;}
+div.connection div input.big:focus {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(238, 131, 102, 0.9);
+    -moz-box-shadow:    0px 0px 5px 0px rgba(238, 131, 102, 0.9);
+    box-shadow:         0px 0px 5px 0px rgba(238, 131, 102, 0.9);
+    outline: none;
+    border: 1px solid #aaa;
+}
+.bootstrap-datetimepicker-widget td span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+}
+.row {
+    margin: 0;
+}
+.bootstrap-datetimepicker-widget.timepicker-sbs {width: 500px;}
+div.sonata-medium-date div {margin-bottom: 8px;}
+body > .header .logo {
+    height: 49px;
+    line-height: 49px;
+}
+body.fixed .wrapper {margin-top: 49px;}
+.left-side {top: 49px;}
