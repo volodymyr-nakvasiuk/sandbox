@@ -123,6 +123,7 @@ class AppKernel extends Kernel
             new Application\Gillbus\EtravelsBundle\ApplicationGillbusEtravelsBundle(),
             new Application\Gillbus\TicketsBundle\TicketsBundle(),
             new Application\Gillbus\EtravelsPagesBundle\EtravelsPagesBundle(),
+            new Application\Sonata\AdminBundle\ApplicationSonataAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

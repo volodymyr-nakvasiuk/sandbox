@@ -1,0 +1,231 @@
+body > .header .navbar,
+.skin-black .logo,
+.skin-black .logo:hover {
+    background-color: #518CA3;
+}
+.skin-black .left-side {
+    background-color: #3A4B55;
+}
+.skin-black .sidebar > .sidebar-menu > li,
+.skin-black .sidebar > .sidebar-menu > li:first-of-type,
+.skin-black .sidebar>.sidebar-menu>li,
+.text-center {
+    border-top: none;
+    background-color: #3A4B55;
+}
+.text-center {border-top: none !important;}
+.skin-black .sidebar > .sidebar-menu > li a {
+    border-left: 3px solid #3A4B55;
+}
+
+.skin-black .sidebar > .sidebar-menu > li.active > a {
+    color: #fff;
+    background-color: #2C3A42;
+    border-color: #2C3A42;
+}
+.skin-black .sidebar > .sidebar-menu > li > a:hover {
+    color: #fff;
+    border-left: 3px solid #EE8366;
+    background-color: #2C3A42;
+}
+.skin-black .sidebar > .sidebar-menu > li > .treeview-menu {
+    color: #fff;
+    background-color: #3A4B55;
+    border-color: #3A4B55;
+}
+.skin-black .sidebar {
+    border-bottom: none;
+}
+.box.box-primary {
+    border-top-color: #EE8366;
+}
+.form-control {height: 25px;}
+.form-control:focus {border-color: #EE8366 !important;}
+label {
+    color: #000;
+    /*text-transform: uppercase;*/
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+    padding: 4px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.btn-group, .btn-group-vertical {float: right;}
+.input-group.date .input-group-addon span {
+    width: 14px;
+    height: 14px;
+}
+.input-group-addon {padding: 3px 8px;}
+.box .box-header .box-title {font-size: 16px;}
+.form-group {margin-bottom: 0px; }
+.filter_container > .form-group {padding-bottom: 8px;}
+.select2-container .select2-choice {
+    height: 25px;
+    line-height: 25px;
+    font-size: 12px;
+}
+.input-group-addon {font-size: 12px;}
+.sonata-ba-list .form-control.select2-container {
+    margin-bottom: 0px;
+    outline: none;
+}
+.select2-container-active {border: none;}
+.form-control.select2-container {margin-bottom: 8px;}
+.form-control {font-size: 12px;  padding: 0px 5px;}
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices,
+.select2-drop-active {
+    border: 1px solid #3C8DBC;
+}
+.select2-results .select2-highlighted {
+    background: #3C8DBC;
+    opacity: 0.7;
+    font-size: 12px;
+}
+.select2-results li {font-size: 12px;}
+.select2-search input:focus {
+    border: 1px solid #EE8366;
+}
+.select2-search input {margin-top: 3px;}
+.form-control.select2-container.select2-dropdown-open {
+    border-color: #3C8DBC;
+    border: none;
+    outline: none;
+}
+.select2-results {padding: 0;}
+.select2-search {
+    padding-left: 0;
+    padding-right: 0;
+}
+.select2-drop-auto-width .select2-search {padding-top: 0;}
+.select2-result-selectable .select2-match,
+.select2-result-unselectable .select2-match {
+    color: #000;
+    font-weight: bold;
+}
+/*.select2-container .select2-choice:focus {border: 1px solid transparent;}*/
+.select2-drop.select2-drop-above.select2-drop-active {border-top: 1px solid #3C8DBC;}
+.select2-dropdown-open.select2-drop-above .select2-choice,
+.select2-dropdown-open.select2-drop-above .select2-choices {border: 1px solid #3C8DBC;}
+.btn-group {margin-left: 5px;}
+.skin-black .navbar .navbar-right .nav a.dropdown-toggle {color: #fff;}
+.skin-black .navbar .nav.breadcrumb a,
+.skin-black .navbar .nav.navbar-right a {color: #000;}
+.breadcrumb>.active,
+.breadcrumb>li+li:before {color: #fff;}
+
+.skin-black .navbar .nav > li > a.dropdown-toggle:hover,
+.skin-black .navbar .nav > li > a.dropdown-toggle:active,
+.skin-black .navbar .nav > li > a.dropdown-toggle:focus,
+.skin-black .navbar .nav .open > a.dropdown-toggle,
+.skin-black .navbar .nav .open > a.dropdown-toggle:hover,
+.skin-black .navbar .nav .open > a.dropdown-toggle:focus,
+.skin-black .navbar .nav.breadcrumb a:hover {color: #EE8366;}
+.navbar-nav > .user-menu > .dropdown-menu {
+    padding: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.dropdown-menu.multi-column .dropdown-menu {width: 100%;}
+.skin-black .navbar .sidebar-toggle:hover .icon-bar {background-color: #EE8366 !important;}
+.skin-black .navbar .dropdown-menu > li > a:hover {
+    background-color: #EE8366;
+    color: #fff;
+}
+
+.filter_container > .form-group:not(:last-child) {
+    border-bottom: 1px dotted #CCC;
+    margin-bottom: 10px;
+}
+.input-group .input-group-addon {cursor: pointer;}
+.btn {
+    padding: 4px 9px;
+    font-size: 12px;
+}
+.dropdown-menu > li > a:hover {background-color: #EE8366;}
+.table .text-center {background-color: #518CA3;}
+.pagination>.active>a,
+.pagination>.active>span,
+.pagination>.active>a:hover,
+.pagination>.active>span:hover,
+.pagination>.active>a:focus,
+.pagination>.active>span:focus {
+    background-color: #EE8366;
+    border-color: #EE8366;
+}
+.pagination {margin-top: 4px;}
+.table label {
+    text-transform: none;
+    line-height: 24px;
+}
+.select2-container .select2-choice abbr {top: 5px;}
+.datepicker td, .datepicker th {
+    font-size: 12px;
+    height: 15px;
+    line-height: 15px;
+}
+.bootstrap-datetimepicker-widget {width: 185px;}
+.bootstrap-datetimepicker-widget td.day {
+    height: 15px;
+    line-height: 15px;
+}
+.table-condensed>tbody>tr>td {padding: 3px 2px;}
+body.fixed .wrapper {
+    margin-top: 70px;
+}
+.skin-black .treeview-menu > li.active > a,
+.skin-black .treeview-menu > li > a:hover {color: #EE8366;}
+div.connection form {
+    padding: 15px 20px;
+}
+div.connection {
+    width: 444px;
+    margin: 0px 0 0 -222px;
+}
+div.connection .control-group {
+    padding: 0;
+    margin-bottom: 10px;
+}
+div.connection div input.big {
+    height: 25px;
+    font-size: 12px;
+    padding: 0 10px;
+}
+.connection label {text-transform: none;}
+div.connection .form-actions {padding: 0;}
+div.connection div input.big:focus {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(238, 131, 102, 0.9);
+    -moz-box-shadow:    0px 0px 5px 0px rgba(238, 131, 102, 0.9);
+    box-shadow:         0px 0px 5px 0px rgba(238, 131, 102, 0.9);
+    outline: none;
+    border: 1px solid #aaa;
+}
+.bootstrap-datetimepicker-widget td span {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+}
+.row {
+    margin: 0;
+}
+.bootstrap-datetimepicker-widget.timepicker-sbs {width: 500px;}
+div.sonata-medium-date div {margin-bottom: 8px;}
+body > .header .logo {
+    height: 49px;
+    line-height: 49px;
+}
+body.fixed .wrapper {margin-top: 49px;}
+.left-side {top: 49px;}
+
+.table>thead>tr>th {
+    padding: 10px 5px;
+}
