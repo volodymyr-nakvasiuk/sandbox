@@ -96,7 +96,7 @@ class Order
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $id;
+    public $id;
 
     /**
      * @var \Application\Gillbus\EtravelsBundle\Entity\Status
@@ -107,6 +107,43 @@ class Order
      * })
      */
     private $status;
+
+    /**
+     * @var \Application\Gillbus\EtravelsBundle\Entity\Sduser
+     *
+     * @ORM\ManyToOne(targetEntity="Application\Gillbus\EtravelsBundle\Entity\Sduser")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id", referencedColumnName="order_id")
+     * })
+     */
+    private $sduser;
+    /**
+     * @ORM\OneToMany(targetEntity="Sduser", mappedBy="order")
+     */
+    protected $sdusers;
+
+    /**
+     * Get sdusers
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getSdUsers()
+    {
+        return $this->sdusers;
+    }
+    /**
+     * Get sdUser
+     *
+     * @return string
+     */
+    public function getSdUser()
+    {
+        $sd_users = $this->sdusers->toArray();
+        if(!empty($sd_users)) {
+            return $this->sduser=$sd_users[0]->user;
+        }
+        return $this->sduser='-';
+    }
 
     /**
      * @var \Application\Gillbus\EtravelsBundle\Entity\Client
