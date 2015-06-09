@@ -13,6 +13,7 @@ class AppKernel extends Kernel
         // Please read http://symfony.com/doc/2.0/book/installation.html#configuration-and-setup
         bcscale(3);
 
+        date_default_timezone_set('Asia/Bangkok');
         parent::init();
     }
 
