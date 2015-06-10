@@ -13,12 +13,15 @@ class EtravelsPagesAdmin extends Admin
     /**
      * @param DatagridMapper $datagridMapper
      */
-/*    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('titleRu')
+            ->add('url', null, array('label'=>'url'))
+            ->add('isDeleted', null, array('label'=>'is deleted'))
+            ->add('type', null, array('label'=>'form type'))
+            ->add('titleRu', null, array('label'=>'title'))
         ;
-    }*/
+    }
 
 
 
