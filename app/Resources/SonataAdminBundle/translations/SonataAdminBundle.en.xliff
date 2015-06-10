@@ -48,6 +48,16 @@
                 <source>action_title</source>
                 <target>Action</target>
             </trans-unit>
+
+            <trans-unit id="user_block_login">
+                <source>user_block_login</source>
+                <target>Login</target>
+            </trans-unit>
+
+            <trans-unit id="user_block_logout">
+                <source>user_block_logout</source>
+                <target>Logout</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
