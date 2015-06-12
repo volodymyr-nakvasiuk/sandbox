@@ -55,8 +55,7 @@ class EtravelsPagesAdmin extends Admin
             ->add('searchCityTo', null, array('label'=>'searchCityTo'))*/
            ->add('_action', 'actions', array(
                 'actions' => array(
-                    'show' => array(),
-                    'edit' => array(),
+                    'show' => array('template' => 'EtravelsPagesBundle:Default:list__action_show.html.twig')
                 )
             ))
         ;
