@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Sduser
  *
- * @ORM\Table(name="sduser_test")
+ * @ORM\Table(name="sduser")
  * @ORM\Entity
  */
 class Sduser
