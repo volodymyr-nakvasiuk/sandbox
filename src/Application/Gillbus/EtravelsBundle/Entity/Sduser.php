@@ -19,14 +19,14 @@ class Sduser
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $order_id;
+    private $order_id;
 
     /**
      * @var string
      *
      * @ORM\Column(name="sd_user", type="string")
      */
-    public $user;
+    private $user;
 
 
     /**

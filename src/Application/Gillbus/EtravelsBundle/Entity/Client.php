@@ -24,7 +24,7 @@ class Client
      *
      * @ORM\Column(name="phone", type="string", length=30, nullable=false)
      */
-    public $phone;
+    private $phone;
 
     /**
      * @var \DateTime

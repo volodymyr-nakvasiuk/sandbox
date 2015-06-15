@@ -24,21 +24,21 @@ class Order
      *
      * @ORM\Column(name="order_number", type="string", length=20, nullable=false)
      */
-    public $orderNumber;
+    private $orderNumber;
 
     /**
      * @var string
      *
      * @ORM\Column(name="system_number", type="string", length=20, nullable=false)
      */
-    public $systemNumber;
+    private $systemNumber;
 
     /**
      * @var string
      *
      * @ORM\Column(name="amount", type="string")
      */
-    public $orderAmount;
+    private $orderAmount;
 
     /**
      * @var boolean
@@ -96,7 +96,7 @@ class Order
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
 
     /**
      * @var \Application\Gillbus\EtravelsBundle\Entity\Status
@@ -120,7 +120,7 @@ class Order
     /**
      * @ORM\OneToMany(targetEntity="Sduser", mappedBy="order")
      */
-    protected $sdusers;
+    private $sdusers;
 
     /**
      * Get sdusers
@@ -153,7 +153,7 @@ class Order
      *   @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      * })
      */
-    public $client;
+    private $client;
 
 
 
@@ -205,7 +205,7 @@ class Order
         return $this->orderNumber;
     }
 
-    public $novaPoshtaAmount = 0;
+    private $novaPoshtaAmount = 0;
     /**
      * Get novaPoshtaAmount
      *
@@ -216,13 +216,13 @@ class Order
         $posts = $this->postings->toArray();
         $amount = 0;
         foreach($posts as $posting) {
-            if($posting->postingType == 'nova_poshta_amount') {
-                $amount = $posting->amount;
+            if($posting->getPostingType() == 'nova_poshta_amount') {
+                $amount = $posting->getAmount();
             }
         }
         return $this->novaPoshtaAmount = 0+(float)$amount;
     }
-    public $novaPoshtaTax = 0;
+    private $novaPoshtaTax = 0;
     /**
      * Get novaPoshtaTax
      *
@@ -233,14 +233,14 @@ class Order
         $posts = $this->postings->toArray();
         $amount = 0;
         foreach($posts as $posting) {
-            if($posting->postingType == 'nova_poshta_tax') {
-                $amount = $posting->amount;
+            if($posting->getPostingType() == 'nova_poshta_tax') {
+                $amount = $posting->getAmount();
             }
         }
         return $this->novaPoshtaTax = 0+(float)$amount;
     }
 
-    public $novaPoshtaCheat = 0;
+    private $novaPoshtaCheat = 0;
     /**
      * Get novaPoshtaCheat
      *
@@ -251,8 +251,8 @@ class Order
         $posts = $this->postings->toArray();
         $amount = 0;
         foreach($posts as $posting) {
-            if($posting->postingType == 'nova_poshta_cheat') {
-                $amount = $posting->amount;
+            if($posting->getPostingType() == 'nova_poshta_cheat') {
+                $amount = $posting->getAmount();
             }
         }
         return $this->novaPoshtaCheat = 0+(float)$amount;
@@ -262,7 +262,7 @@ class Order
     /**
      * @ORM\OneToMany(targetEntity="Posting", mappedBy="order")
      */
-    protected $postings;
+    private $postings;
 
     /**
      * Get postings

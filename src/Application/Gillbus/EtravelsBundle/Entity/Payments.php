@@ -52,14 +52,14 @@ class Payments
      *   @ORM\JoinColumn(name="order_id", referencedColumnName="id")
      * })
      */
-    public $endReservation;
+    private $endReservation;
 
     /**
      * @var string
      *
      * @ORM\Column(name="amount", type="string")
      */
-    public $paymentAmount;
+    private $paymentAmount;
 
     /**
      * @var \Application\Gillbus\EtravelsBundle\Entity\Order
@@ -200,5 +200,10 @@ class Payments
     public function __toString()
     {
         return (string)$this->getEndReservation();
+    }
+
+    public function getPhone()
+    {
+        return $this->orderNumber->getClient()->getPhone();
     }
 }

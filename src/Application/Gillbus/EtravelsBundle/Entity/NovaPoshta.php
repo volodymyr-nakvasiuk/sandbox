@@ -118,7 +118,7 @@ class NovaPoshta
      */
     public function getOrderNumber()
     {
-        return $this->endReservation->endReservation->orderNumber;
+        return $this->endReservation->getOrderNumber();
     }
 
     /**
@@ -128,7 +128,7 @@ class NovaPoshta
      */
     public function getNovaPoshtaTax()
     {
-        return $this->endReservation->endReservation->getNovaPoshtaTax();
+        return $this->endReservation->getOrderNumber()->getNovaPoshtaTax();
     }
 
     /**
@@ -138,7 +138,7 @@ class NovaPoshta
      */
     public function getNovaPoshtaAmount()
     {
-        return $this->endReservation->endReservation->getNovaPoshtaAmount();
+        return $this->endReservation->getOrderNumber()->getNovaPoshtaAmount();
     }
     /**
      * Get novaPoshtaCheat
@@ -147,7 +147,7 @@ class NovaPoshta
      */
     public function getNovaPoshtaCheat()
     {
-        return $this->endReservation->endReservation->getNovaPoshtaCheat();
+        return $this->endReservation->getOrderNumber()->getNovaPoshtaCheat();
     }
 
     /**
@@ -157,7 +157,7 @@ class NovaPoshta
      */
     public function getOrderAmount()
     {
-        return 0+(float)$this->endReservation->endReservation->orderAmount;
+        return $this->endReservation->getOrderAmount();
     }
 
     /**
@@ -167,7 +167,7 @@ class NovaPoshta
      */
     public function getPaymentAmount()
     {
-        return 0+(float)$this->endReservation->paymentAmount;
+        return $this->endReservation->getPaymentAmount();
     }
 
     /**
@@ -177,7 +177,7 @@ class NovaPoshta
      */
     public function getPhone()
     {
-        return $this->endReservation->endReservation->client->phone;
+        return $this->endReservation->getPhone();
     }
 
     /**

@@ -33,14 +33,14 @@ class Posting
      *
      * @ORM\Column(name="posting_type", type="string")
      */
-    public $postingType;
+    private $postingType;
 
     /**
      * @var string
      *
      * @ORM\Column(name="amount", type="string")
      */
-    public $amount;
+    private $amount;
 
 
     /**
