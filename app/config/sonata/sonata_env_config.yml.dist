@@ -50,17 +50,17 @@ doctrine:
                 password: %database_password%
                 charset:  UTF8
 
-            api_etravels:
+            tickets:
                 driver:   %database_driver%
-                dbname:   %database_name_api%
+                dbname:   %database_name_tickets%
                 user:     %database_user%
                 host:     %database_host%
                 password: %database_password%
                 charset:  UTF8
 
-            tickets:
+            api_etravels:
                 driver:   %database_driver%
-                dbname:   %database_name_tickets%
+                dbname:   %database_name_api%
                 user:     %database_user%
                 host:     %database_host%
                 password: %database_password%
@@ -87,15 +87,15 @@ doctrine:
                 connection: default
                 auto_mapping: true
                 mappings: ~
+            tickets:
+                connection: tickets
+                mappings:
+                    TicketsBundle: ~
 
             api_etravels:
                 connection: api_etravels
                 mappings:
                     ApplicationGillbusEtravelsBundle: ~
-            tickets:
-                connection: tickets
-                mappings:
-                    TicketsBundle: ~
 
             etravels:
                 connection: etravels
