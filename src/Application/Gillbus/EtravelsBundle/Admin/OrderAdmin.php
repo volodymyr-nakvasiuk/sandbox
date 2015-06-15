@@ -10,6 +10,11 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 class OrderAdmin extends Admin
 {
+    protected $datagridValues = array(
+        '_page' => 1,
+        '_sort_order' => 'DESC',
+        '_sort_by' => 'dateCreate',
+    );
     /**
      * @param DatagridMapper $datagridMapper
      */
